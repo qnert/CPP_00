@@ -15,14 +15,19 @@ void	switch_to_uppercase(char *str)
 
 int	main(int argc, char **argv)
 {
-	if (argc != 1 && argc != 2)
-		return (-1);
+	int	i;
+
+	i = 0;
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	if (argc == 2)
+	else
 	{
-		switch_to_uppercase(argv[1]);
-		std::cout << argv[1] << std::endl;
+		while (argv[++i] != NULL)
+		{
+			switch_to_uppercase(argv[i]);
+			std::cout << argv[i];
+		}
+		std::cout << std::endl;
 	}
 	return (0);
 }
