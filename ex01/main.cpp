@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:51:43 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 17:34:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/03 17:45:19 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 		else if (!(prompt.compare("ADD")))
 			TeleRom.add_new_contact();
 		else if (!(prompt.compare("SEARCH")))
-			std::cout << std::endl;
+			TeleRom.display_contacts();
 		else
 		{
 			std::cout << "\033[31m" << "---------------------------------------------";

@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 16:17:35 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/03 17:48:02 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class Contact{
 	public :
@@ -25,6 +26,7 @@ class Contact{
 		std::string	hometown;
 	public :
 		void	init();
+		void	display_data(int index);
 };
 
 #endif

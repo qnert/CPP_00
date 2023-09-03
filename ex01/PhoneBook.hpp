@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:35:58 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 16:27:53 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/03 17:38:17 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class PhoneBook{
 	public :
 		void	set_default();
 		void	add_new_contact();
+		void	display_contacts();
 };
 
 #endif
