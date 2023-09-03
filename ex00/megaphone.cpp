@@ -26,6 +26,8 @@ int	main(int argc, char **argv)
 		{
 			switch_to_uppercase(argv[i]);
 			std::cout << argv[i];
+			if (i < argc - 1)
+				std::cout << " ";
 		}
 		std::cout << std::endl;
 	}
