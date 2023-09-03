@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:45:33 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 17:57:53 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/03 18:28:53 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void Contact::init()
 {
+	std::cout << "-------------------------------------------------------------\n";
 	std::cout << "Enter first name: "; std::cin >> first_name;
 	std::cout << "Enter last name: "; std::cin >> last_name;
 	std::cout << "Enter nickname: "; std::cin >> nickname;
 	std::cout << "Enter phonenumber: "; std::cin >> phonenbr;
 	std::cout << "Enter hometown: "; std::cin >> hometown;
+	std::cout << "-------------------------------------------------------------\n";
 }
 
 void	Contact::display_data(int index)
@@ -37,3 +39,12 @@ void	Contact::display_data(int index)
 	else
 		std::cout << "|" << nickname.substr(0, 9) << "." << "|" << std::endl;
 }
+
+void	Contact::display_whole_contact()
+{
+	std::cout << "First name:  " << first_name << std::endl;
+	std::cout << "Last name:   " << last_name << std::endl;
+	std::cout << "Nickname:    " << nickname << std::endl;
+	std::cout << "Phonenumber: " << phonenbr << std::endl;
+	std::cout << "Hometown:    " << hometown << std::endl;
+};

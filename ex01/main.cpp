@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:51:43 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 17:45:19 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/03 18:29:45 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ int	main(void)
 	{
 		std::cout << "\033[37m" << "Please enter a command: ";
 		std::cin >> prompt;
-		if (!(prompt.compare("EXIT")))
+		if (!std::cin)
 			break ;
-		else if (!(prompt.compare("ADD")))
+		if (!(prompt.compare("EXIT")) && prompt.size() == 4)
+			break ;
+		else if (!(prompt.compare("ADD")) && prompt.size() == 3)
 			TeleRom.add_new_contact();
-		else if (!(prompt.compare("SEARCH")))
+		else if (!(prompt.compare("SEARCH")) && prompt.size() == 6)
 			TeleRom.display_contacts();
 		else
 		{

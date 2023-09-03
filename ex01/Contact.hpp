@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 17:48:02 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/03 18:09:24 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Contact{
 	public :
 		void	init();
 		void	display_data(int index);
+		void	display_whole_contact();
 };
 
 #endif

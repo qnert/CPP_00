@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:04:15 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 18:01:00 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/03 18:17:00 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	PhoneBook::add_new_contact()
 void	PhoneBook::display_contacts()
 {
 	int	i;
+	int	number;
 
 	i = 0;
 	if (index == 0)
@@ -48,5 +49,15 @@ void	PhoneBook::display_contacts()
 	{
 		phonecontacts[i].display_data(i);
 		i++;
+	}
+	std::cout << "Please enter the contact index your searching for: ";
+	std::cin >> number;
+	if (number < index)
+		phonecontacts[number].display_whole_contact();
+	else
+	{
+		std::cout << "----------------------------------------------------------";
+		std::cout << "\nIndex is not in the valid range of the phonebook contacts.\n";
+		std::cout << "----------------------------------------------------------\n";
 	}
 };
