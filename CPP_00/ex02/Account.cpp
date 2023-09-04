@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:13:28 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 16:37:30 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/04 18:14:46 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Account::Account()
 	_displayTimestamp();
 	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
 }
+
 Account::Account(int initial_deposit)
 {
 	this->_accountIndex = getNbAccounts();
