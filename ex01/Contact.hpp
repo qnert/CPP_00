@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 11:07:26 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/04 11:51:19 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+
+#define RESET "\033[0m"
+#define GREEN "\033[32m"
 
 class Contact{
 	private :

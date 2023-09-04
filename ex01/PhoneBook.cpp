@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:04:15 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 11:30:02 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/04 12:11:34 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,34 @@ void	PhoneBook::display_contacts()
 	i = 0;
 	if (index == 0)
 	{
-		std::cout << "-------------------------------------------------------------";
+		std::cout << RED << "-------------------------------------------------------------";
 		std::cout << "\nAdd a contact first to be able to use the search command." << std::endl;
-		std::cout << "-------------------------------------------------------------\n";
+		std::cout << "-------------------------------------------------------------\n" << RESET;
 		return ;
 	}
+	std::cout << "---------------------------------------------\n";
 	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
 	while (i < index)
 	{
 		phonecontacts[i].display_data(i);
 		i++;
 	}
+	std::cout << "---------------------------------------------\n";
 	std::cout << "Please enter the contact index your searching for: ";
 	std::cin >> number;
-	if (number < index && number >= 0)
+	if (number < index && number >= 0 && !std::cin.fail())
 		phonecontacts[number].display_whole_contact();
+	else if (std::cin.fail())
+	{
+		std::cin.clear(); std::cin.ignore(512, '\n');
+		std::cout << RED << "-------------------------------------------------------------\n";
+		std::cout << "Error. Only numerical values accepted." << std:: endl;
+		std::cout << "-------------------------------------------------------------\n" << RESET;
+	}
 	else
 	{
-		std::cout << "----------------------------------------------------------";
+		std::cout << RED << "-------------------------------------------------------------";
 		std::cout << "\nIndex is not in the valid range of the phonebook contacts.\n";
-		std::cout << "----------------------------------------------------------\n";
+		std::cout << "-------------------------------------------------------------\n" << RESET;
 	}
 };
