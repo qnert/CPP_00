@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:13:28 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 15:24:13 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/04 16:37:30 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	Account::_totalNbWithdrawals = 0;
 
 Account::Account()
 {
-		this->_accountIndex = getNbAccounts();
+	this->_accountIndex = getNbAccounts();
 	this->_amount = 0;
 	_totalAmount += _amount;
 	this->_nbDeposits = 0;
@@ -117,10 +117,10 @@ void	Account::_displayTimestamp()
 {
 	char		str[18];
 	time_t		currtime;
-	struct tm	*timeinfo;
+	struct tm	*time_in_calender;
 
 	time(&currtime);
-	timeinfo = localtime(&currtime);
-	strftime(str, 18, "[%Y%m%d_%H%M%S]", timeinfo);
+	time_in_calender = localtime(&currtime);
+	strftime(str, 18, "[%Y%m%d_%H%M%S]", time_in_calender);
 	std::cout << str;
 }
