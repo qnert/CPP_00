@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 18:09:24 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/04 11:07:26 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <iomanip>
 
 class Contact{
-	public :
+	private :
 		std::string	first_name;
 		std::string	last_name;
 		std::string	nickname;

@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:35:58 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 17:38:17 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/04 11:07:35 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "Contact.hpp"
 
 class PhoneBook{
-	public :
+	private :
 		int		index;
 		int		nb_of_contacts;
 		Contact	phonecontacts[8];
