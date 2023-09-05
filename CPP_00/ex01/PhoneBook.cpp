@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:04:15 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 12:11:34 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/05 17:07:48 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ void	PhoneBook::add_new_contact()
 
 void	PhoneBook::display_contacts()
 {
-	int	i;
-	int	number;
+	int			i;
+	int			nb;
+	std::string	number;
 
 	i = 0;
 	if (index == 0)
@@ -53,20 +54,14 @@ void	PhoneBook::display_contacts()
 	}
 	std::cout << "---------------------------------------------\n";
 	std::cout << "Please enter the contact index your searching for: ";
-	std::cin >> number;
-	if (number < index && number >= 0 && !std::cin.fail())
-		phonecontacts[number].display_whole_contact();
-	else if (std::cin.fail())
-	{
-		std::cin.clear(); std::cin.ignore(512, '\n');
-		std::cout << RED << "-------------------------------------------------------------\n";
-		std::cout << "Error. Only numerical values accepted." << std:: endl;
-		std::cout << "-------------------------------------------------------------\n" << RESET;
-	}
+	std::getline(std::cin, number);
+	nb = std::atoi(number.c_str());
+	if (nb < index && nb >= 0 && (number.size() == 1 && number[0] >= '0' && number[0] <= '9'))
+		phonecontacts[nb].display_whole_contact();
 	else
 	{
 		std::cout << RED << "-------------------------------------------------------------";
-		std::cout << "\nIndex is not in the valid range of the phonebook contacts.\n";
+		std::cout << "\nNot a valid input for a contact to be shown.\n";
 		std::cout << "-------------------------------------------------------------\n" << RESET;
 	}
 };

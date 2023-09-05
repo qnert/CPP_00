@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:45:33 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 12:36:56 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/05 16:50:25 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void Contact::init()
 {
 	std::cout << GREEN << "-------------------------------------------------------------\n" << RESET;
-	std::cout << "Enter first name: "; std::cin >> first_name;
-	std::cout << "Enter last name: "; std::cin >> last_name;
-	std::cout << "Enter nickname: "; std::cin >> nickname;
-	std::cout << "Enter phonenumber: "; std::cin >> phonenbr;
-	std::cout << "Enter hometown: "; std::cin >> hometown;
+	std::cout << "Enter first name: "; std::getline(std::cin, first_name);
+	std::cout << "Enter last name: "; std::getline(std::cin, last_name);
+	std::cout << "Enter nickname: "; std::getline(std::cin, nickname);
+	std::cout << "Enter phonenumber: "; std::getline(std::cin, phonenbr);
+	std::cout << "Enter hometown: "; std::getline(std::cin, hometown);
 	std::cout << GREEN << "-------------------------------------------------------------\n" << RESET;
 }
 

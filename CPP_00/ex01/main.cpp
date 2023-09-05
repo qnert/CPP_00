@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:51:43 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/05 13:28:05 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/05 16:53:52 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,27 @@ int	main(void)
 	TeleRom.set_default();
 	std::cout << "Welcome to " << MAGENTA << "TeleRom " << RESET << "your trustworthy PhoneBook!" << std::endl;
 	std::cout << "Valid commands are: " << "ADD " << "SEARCH " << "or EXIT\n\n";
-	std::cout << "Please enter a command: ";
 	while (1)
 	{
-		if (prompt.size() != 0)
-			std::cout << "Please enter a command: ";
-		std::getline(std::cin, prompt, '\n');
+		std::cout << "Please enter a command: ";
+		std::getline(std::cin, prompt);
 		switch_to_uppercase((char *)prompt.c_str());
-		if (!std::cin)
+		if (std::cin.eof())
 			break ;
-		if (!(prompt.compare("EXIT")) && prompt.size() == 4)
+		else if (prompt.empty())
+		{
+			std::cout << RED << "-------------------------------------------------------------\n";
+			std::cout << "Your input is empty!" << std::endl;
+			std::cout << RED << "-------------------------------------------------------------\n" << RESET;
+			continue ;
+		}
+		else if (!(prompt.compare("EXIT")) && prompt.size() == 4)
 			break ;
 		else if (!(prompt.compare("ADD")) && prompt.size() == 3)
 			TeleRom.add_new_contact();
 		else if (!(prompt.compare("SEARCH")) && prompt.size() == 6)
 			TeleRom.display_contacts();
-		else if (prompt.size() != 0)
+		else
 		{
 			std::cout << RED << "-------------------------------------------------------------";
 			std::cout << "\nPlease enter a valid command!" << std::endl;
