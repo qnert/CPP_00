@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:51:43 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 12:39:41 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/05 13:28:05 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(void)
 
 	TeleRom.set_default();
 	std::cout << "Welcome to " << MAGENTA << "TeleRom " << RESET << "your trustworthy PhoneBook!" << std::endl;
+	std::cout << "Valid commands are: " << "ADD " << "SEARCH " << "or EXIT\n\n";
 	std::cout << "Please enter a command: ";
 	while (1)
 	{
@@ -53,6 +54,8 @@ int	main(void)
 			std::cout << RED << "-------------------------------------------------------------";
 			std::cout << "\nPlease enter a valid command!" << std::endl;
 			std::cout << "Valid commands are: " << "ADD " << "SEARCH " << "or EXIT\n";
+			if (prompt[prompt.size() - 1] == ' ')
+				std::cout << "Be careful about backspaces!!!" << std::endl;
 			std::cout << "-------------------------------------------------------------" << RESET << std::endl;
 		}
 	}
