@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 11:51:19 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/05 23:14:31 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,16 @@
 #include <iomanip>
 
 #define RESET "\033[0m"
+#define RED "\033[31m"
 #define GREEN "\033[32m"
+
+//Contact class helper
+bool	is_alpha_string(std::string str);
+bool	is_nbr_string(std::string str);
+bool	is_print_string(std::string str);
+std::string	get_input_alpha(std::string str);
+std::string	get_input_phonenbr(std::string str);
+std::string get_input_all(std::string str);
 
 class Contact{
 	private :
@@ -26,7 +35,7 @@ class Contact{
 		std::string	last_name;
 		std::string	nickname;
 		std::string	phonenbr;
-		std::string	hometown;
+		std::string	d_secret;
 	public :
 		void	init();
 		void	display_data(int index);
