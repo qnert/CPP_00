@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact_helper.cpp                                 :+:      :+:    :+:   */
+/*   Contact_helper.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 23:13:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/05 23:13:35 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/07 17:05:27 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ bool	is_nbr_string(std::string str)
 	int	i;
 
 	i = 0;
-	if (str.size() < 4)
+	if (str.size() < 2 || (str[i] == '+' && str.size() < 4))
 	{
 		std::cout << RED << "\n Too short number input.\n\n" << RESET;
 		return (false);
