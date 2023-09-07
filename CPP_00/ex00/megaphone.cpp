@@ -6,28 +6,32 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:05 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/03 15:36:07 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/07 14:38:36 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-void	switch_to_uppercase(char *str)
+#include <iostream>
+
+std::string	switch_to_uppercase(std::string str)
 {
-	int	i;
+	unsigned long	i;
 
 	i = 0;
-	while (str[i])
+	while (i < str.size())
 	{
 		if (std::islower(str[i]))
 			str[i] = std::toupper(str[i]);
 		i++;
 	}
+	return (str);;
 }
 
 int	main(int argc, char **argv)
 {
 	int	i;
+	std::string tmp;
 
 	i = 0;
 	if (argc == 1)
@@ -36,8 +40,8 @@ int	main(int argc, char **argv)
 	{
 		while (argv[++i] != NULL)
 		{
-			switch_to_uppercase(argv[i]);
-			std::cout << argv[i];
+			tmp = switch_to_uppercase(argv[i]);
+			std::cout << tmp;
 			if (i < argc - 1)
 				std::cout << " ";
 		}
