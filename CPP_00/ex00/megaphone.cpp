@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:05 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/07 14:38:36 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/07 16:22:02 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string	switch_to_uppercase(std::string str)
 			str[i] = std::toupper(str[i]);
 		i++;
 	}
-	return (str);;
+	return (str);
 }
 
 int	main(int argc, char **argv)
