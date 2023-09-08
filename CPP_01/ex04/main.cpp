@@ -6,10 +6,11 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:20:00 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/08 16:51:46 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/08 18:10:11 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
 #include <iostream>
 #include <cstdio>
 #include <fstream>
@@ -42,36 +43,64 @@ std::ofstream	create_file(std::string str)
 	fd.open(str, std::ios::out);
 	return (fd);
 }
+std::string	read_file(std::fstream fd)
+{
+	std::string	buff;
+	std::string ret_str = "";
+
+	if (!fd)
+		return ("");
+	while (std::getline(fd, buff))
+	{
+		ret_str.append(buff);
+		ret_str.append("\n");
+	}
+	fd.close();
+	return (ret_str);
+}
 
 int	main(int argc, char *argv[])
 {
-	std::string	buff;
-	std::fstream fd_old;
+	size_t		i;
+	size_t		j;
+	size_t		found;
+	std::string	file_content;
 	std::ofstream fd_new;
 
+	i = 0;
 	if (ft_strlen(argv[2]) == 0 || ft_strlen(argv[3]) == 0)
 		return (std::cout << "One argument of argv is empty!\n", 0);
 	if (argc == 4)
 	{
-		fd_old = open_file(argv[1]);
-		fd_new = create_file(argv[1]);
-		if (!fd_old)
+		file_content = read_file(open_file(argv[1]));
+		if (file_content.empty())
 			return (std::cout << "File couldn't be opened!\n", 0);
-		while (getline(fd_old, buff, ' '))
+		fd_new = create_file(argv[1]);
+		found = file_content.find(argv[2]);
+		if (found == file_content.npos)
+			fd_new << file_content;
+		else
 		{
-			if (!buff.compare(argv[2]))
-				fd_new << argv[3];
-			else
-				fd_new << buff;
-			if (argv[2][0] == 32)
-				fd_new << argv[3];
-			else
-				fd_new << " ";
-
+			while (found != file_content.npos)
+			{
+				while (file_content[i] && i < found)
+				{
+					fd_new << file_content[i];
+					i++;
+				}
+				j = 0;
+				if (file_content[i + 1] == '\0')
+					break ;
+				while (argv[3][j] && i < (ft_strlen(argv[3]) + i))
+				{
+					fd_new << argv[3][j];
+					i++;
+					j++;
+				}
+				found = file_content.find(argv[2], found + 1);
+			}
 		}
-		fd_old.close();
 		fd_new.close();
-
 	}
 	return (0);
 }
