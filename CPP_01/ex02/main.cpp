@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:46:46 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/08 11:53:11 by skunert          ###   ########.fr       */
+/*   Updated: 2023/09/08 12:24:27 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	std::string str("HI THIS IS BRAIN");
-	std::string *stringPTR = &str;
-	std::string	stringREF = *stringPTR;
+	std::string 	str("HI THIS IS BRAIN");
+	std::string 	*stringPTR = &str;
+	std::string&	stringREF = str;
 
 	std::cout << "Adresses: " << std::endl;
 	std::cout << &str << std::endl;
