@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:06:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/10/02 13:42:15 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:01:35 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Zombie
 		std::string _name;
 };
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
+Zombie *zombieHorde(int N, std::string name);
 
 #endif

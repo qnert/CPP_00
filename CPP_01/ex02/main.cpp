@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:46:46 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/08 15:16:06 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:01:19 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 	std::cout << "Adresses: " << std::endl;
 	std::cout << &str << std::endl;
 	std::cout << stringPTR << std::endl;
-	std::cout << &(*stringPTR) << std::endl;
+	std::cout << &stringREF << std::endl;
 
 	std::cout << "Values: " << std::endl;
 	std::cout << str << std::endl;
