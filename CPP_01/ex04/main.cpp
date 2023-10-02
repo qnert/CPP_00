@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:20:00 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/28 14:33:17 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 11:42:51 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ int	main(int argc, char *argv[])
 	std::string	file_content;
 	std::ofstream fd_new;
 
-	if (ft_strlen(argv[2]) == 0 || ft_strlen(argv[3]) == 0)
-		return (std::cout << "One argument of argv is empty!\n", 1);
+	if (argc == 4 && (ft_strlen(argv[2]) == 0 || ft_strlen(argv[3]) == 0))
+		return (std::cout << "At least one argument of argv is empty!\n", 1);
 	if (argc == 4)
 	{
 		file_content = read_file(argv[1]);
@@ -98,5 +98,7 @@ int	main(int argc, char *argv[])
 			return (std::cout << "File couldn't be opened!\n", 1);
 		replace_string(argv[1], file_content, argv);
 	}
+	else
+		std::cout << "Not the right amount of arguments!" << std::endl;
 	return (0);
 }
