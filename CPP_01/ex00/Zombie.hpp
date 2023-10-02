@@ -6,14 +6,13 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:06:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/04 18:40:09 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 13:42:05 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-#pragma once
 #include <iostream>
 
 class Zombie
