@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:42:31 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/08 15:11:21 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 17:09:53 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,3 @@ int main()
 	}
 return 0;
 }
-
-// int	main(void)
-// {
-// 	Weapon weapon("sword");
-// 	HumanA Simon("Simon", weapon);
-// 	Simon.attack();
-// 	return (0);
-// }

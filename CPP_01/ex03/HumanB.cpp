@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:35:06 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/08 15:14:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:53:07 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ HumanB::HumanB(std::string name)
 {
 	this->_name = name;
 	this->_weapon = NULL;
-}
-
-HumanB::HumanB(std::string name, Weapon weapon)
-{
-	this->_name = name;
-	this->_weapon = &weapon;
 }
 
 void	HumanB::attack(void)

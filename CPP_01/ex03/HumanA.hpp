@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:27:03 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/08 13:22:51 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:53:38 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class HumanA
 
 	public :
 		void	attack(void);
-		void	setWeapon(Weapon weapon);
 
 	HumanA(std::string name, Weapon& weapon);
 };

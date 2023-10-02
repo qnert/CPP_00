@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:33:36 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/08 13:25:34 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:53:19 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class HumanB
 		void	setWeapon(Weapon& weapon);
 
 	HumanB(std::string name);
-	HumanB(std::string name, Weapon weapon);
 };
 
 #endif
