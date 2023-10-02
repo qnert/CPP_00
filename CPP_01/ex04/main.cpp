@@ -6,13 +6,11 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:20:00 by skunert           #+#    #+#             */
-/*   Updated: 2023/10/02 11:42:51 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:10:01 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
-#include <cstdio>
 #include <fstream>
 
 int	ft_strlen(char *str)
@@ -47,39 +45,21 @@ std::string	read_file(std::string str)
 
 int	replace_string(std::string filename, std::string file_content, char **argv)
 {
-	size_t	i;
-	size_t	j;
 	size_t	found;
 	std::ofstream	fd_new;
 
 	fd_new.open(filename.append(".replace"), std::ios::out);
 	if (!fd_new)
 		return (std::cout << "File can't be created!\n", 1);
-	i = 0;
 	found = file_content.find(argv[2]);
 	while (found != file_content.npos)
 	{
-		while (file_content[i] && i < found)
-		{
-			fd_new << file_content[i];
-			i++;
-		}
-		j = 0;
-		if (file_content[i + 1] == '\0')
-			break ;
-		while (argv[3][j])
-		{
-			fd_new << argv[3][j];
-			i++;
-			j++;
-		}
-		found = file_content.find(argv[2], found + 1);
+		file_content.erase(found, ft_strlen(argv[2]));
+		file_content.insert(found, argv[3]);
+		found += ft_strlen(argv[3]);
+		found = file_content.find(argv[2], found);
 	}
-	while (file_content[i])
-	{
-		fd_new << file_content[i];
-		i++;
-	}
+	fd_new << file_content;
 	fd_new.close();
 	return (0);
 }
