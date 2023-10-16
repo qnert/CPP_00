@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 14:42:10 by skunert           #+#    #+#             */
-/*   Updated: 2023/10/02 12:06:57 by skunert          ###   ########.fr       */
+/*   Updated: 2023/10/16 16:32:02 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	Harl person;
 	int	i;
 	void	(Harl::*funcptrs[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string	func_names[4] = {"debug", "info", "warning", "error"};
@@ -56,7 +55,7 @@ void	Harl::complain(std::string level)
 	{
 		if (!level.compare(func_names[i]))
 		{
-			(person.*funcptrs[i])();
+			(this->*funcptrs[i])();
 			return ;
 		}
 		i++;
