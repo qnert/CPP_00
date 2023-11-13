@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:38:49 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/13 16:14:21 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/13 18:13:26 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ Fixed::Fixed(const Fixed& other)
 \************************************************************************************/
 //deconstructor
 Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called\n";
-};
+{};
 
 /************************************************************************************\
 \************************************************************************************/
@@ -105,13 +103,6 @@ Fixed& Fixed::operator=(const Fixed& other)
 		this->value = other.getRawBits();
 	}
 	return (*this);
-}
-
-//ostream operator
-std::ostream& operator<<(std::ostream &os, const Fixed& other)
-{
-	os << other.toFloat();
-	return (os);
 }
 
 /************************************************************************************\
@@ -207,4 +198,13 @@ Fixed Fixed::operator--(int)
 
 	--this->value;
 	return (tmp);
+}
+
+/************************************************************************************\
+\************************************************************************************/
+//ostream operator
+std::ostream& operator<<(std::ostream &os, const Fixed& other)
+{
+	os << other.toFloat();
+	return (os);
 }
