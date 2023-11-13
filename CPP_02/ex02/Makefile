@@ -1,6 +1,6 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = number_salad_advanced
+NAME = a.out
 
 SRCS = main.cpp Fixed.cpp
 
