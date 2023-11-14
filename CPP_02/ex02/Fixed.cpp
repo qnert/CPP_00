@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:38:49 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/14 10:37:22 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/14 13:07:00 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,28 +68,28 @@ float	Fixed::toFloat(void) const
 
 Fixed&	Fixed::min(Fixed& a, Fixed& b)
 {
-	if (a.value < b.value)
+	if (a < b)
 		return (a);
 	return (b);
 }
 
 const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
 {
-	if (a.value < b.value)
+	if (a < b)
 		return (a);
 	return (b);
 }
 
 Fixed&	Fixed::max(Fixed& a, Fixed& b)
 {
-	if (a.value > b.value)
+	if (a > b)
 		return (a);
 	return (b);
 }
 
 const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
 {
-	if (a.value > b.value)
+	if (a > b)
 		return (a);
 	return (b);
 }
