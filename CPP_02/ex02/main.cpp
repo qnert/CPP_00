@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:33:33 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/13 16:04:26 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:36:43 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,27 @@
 
 int main( void )
 {
-	Fixed		a;
-	Fixed const	b((Fixed(5.05f) * Fixed( 2 )));
+	Fixed a(5);
+	Fixed b(8);
+
+	std::cout << std::boolalpha << (a > b) << std::endl;
+	std::cout << std::boolalpha << (a < b) << std::endl;
+	std::cout << std::boolalpha << (a >= b) << std::endl;
+	std::cout << std::boolalpha << (a <= b) << std::endl;
+	std::cout << std::boolalpha << (a == b) << std::endl;
+	std::cout << std::boolalpha << (a != b) << std::endl;
+
+	std::cout << a * b << std::endl;
+	std::cout << a / b << std::endl;
+	std::cout << a + b << std::endl;
+	std::cout << a - b << std::endl;
 
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-
+	std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
 	return 0;
 }

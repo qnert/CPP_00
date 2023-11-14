@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:31:32 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/13 14:25:27 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:26:48 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class Fixed
 	~Fixed(void);
 	Fixed(const Fixed& other);
 	Fixed& operator=(const Fixed& other);
-	friend std::ostream& operator<<(std::ostream &os, const Fixed& other);
 };
+
+std::ostream& operator<<(std::ostream &os, const Fixed& other);
 
 #endif

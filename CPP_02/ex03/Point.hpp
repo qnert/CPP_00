@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:59:18 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/13 18:18:21 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:38:27 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Point
 		Point(void);
 		~Point(void);
 		Point(const float x, const float y);
-		Point(Fixed const x, Fixed const y);
 		Point(const Point& other);
 		Point&	operator=(Point& other);
 

@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:04:15 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/13 18:17:39 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:38:35 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ Point::Point(const float x, const float y) : _x(x), _y(y){
 }
 
 Point::Point(const Point& other) :_x(other._x), _y(other._y){
-}
-
-Point::Point(Fixed const x, Fixed const y): _x(x), _y(y){
 }
 
 Point& Point::operator=(Point& other)

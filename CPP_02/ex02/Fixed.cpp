@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:38:49 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/13 16:14:21 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:37:22 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
 Fixed&	Fixed::max(Fixed& a, Fixed& b)
 {
 	if (a.value > b.value)
-		return (b);
-	return (a);
+		return (a);
+	return (b);
 }
 
 const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
@@ -174,7 +174,7 @@ bool	Fixed::operator==(const Fixed& other) const
 
 bool	Fixed::operator!=(const Fixed& other) const
 {
-	return (this->value != other.value);
+	return !(this->value == other.value);
 }
 
 /************************************************************************************\
