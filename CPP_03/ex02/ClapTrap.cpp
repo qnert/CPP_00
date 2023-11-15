@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:45:59 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 09:59:49 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:23:07 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hit_points > 0)
 	{
-		std::cout << this->_name << " has taken " << amount << " damage!.\n";
+		std::cout << this->_name << " has taken " << amount << " damage!\n";
 		this->_hit_points -= amount;
 	}
 	else
