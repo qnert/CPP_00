@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:24:28 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 12:42:10 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:59:17 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 class Cat : public Animal
 {
+	private:
+		Brain*	brain;
+
 	public:
 		void	makeSound(void) const;
 

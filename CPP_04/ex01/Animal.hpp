@@ -6,13 +6,14 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:11:14 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 12:40:23 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:59:25 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal
 {
