@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:14:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 12:52:39 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 13:00:11 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Animal::~Animal(void)
 
 void	Animal::makeSound(void) const
 {
-	std::cout << std::endl;
+	std::cout << "Animal default sound." std::endl;
 }
 
 std::string	Animal::getType(void) const
