@@ -20,7 +20,7 @@ class WrongAnimal
 		std::string _type;
 
 	public:
-		virtual void	makeSound(void) const;
+		void			makeSound(void) const;
 		std::string		getType(void) const;
 
 	WrongAnimal(void);
