@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:45:59 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 11:23:07 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 10:57:33 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(void)
 	this->_hit_points = 10;
 	this->_energy_points = 10;
 	this->_attack_damage = 0;
-	std::cout << "ClapTrap named " << this->_name << " spawned!\n";
+	std::cout << "ClapTrap default constructor called.\n";
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -27,11 +27,12 @@ ClapTrap::ClapTrap(std::string name)
 	this->_hit_points = 10;
 	this->_energy_points = 10;
 	this->_attack_damage = 0;
-	std::cout << "ClapTrap named " << this->_name << " spawned!\n";
+	std::cout << "ClapTrap param constructor called.\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
+	std::cout << "ClapTrap copy constructor called.\n";
 	this->_name = other._name;
 	this->_hit_points = other._hit_points;
 	this->_energy_points = other._energy_points;
@@ -40,6 +41,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 {
+	std::cout << "ClapTrap copy assigment operator called.\n";
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -52,7 +54,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap named " << this->_name << " has died!\n";
+	std::cout << "ClapTrap default deconstructor called.\n";
 }
 
 //member functions
@@ -60,7 +62,7 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_hit_points > 0 && this->_energy_points > 0)
 	{
-		std::cout << "ClapTrap named " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!\n";
+		std::cout << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!\n";
 		this->_energy_points -= 1;
 	}
 	else if (this->_hit_points <= 0)

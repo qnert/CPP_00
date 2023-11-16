@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:44:34 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 10:42:55 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 10:50:58 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(void): ClapTrap()
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
 	this->is_guarding = false;
-	std::cout << "ScavTrap named " << this->_name << " spawned.\n";
+	std::cout << "ScavTrap default constructor called.\n";
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
@@ -29,7 +29,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
 	this->is_guarding = false;
-	std::cout << "ScavTrap named " << this->_name << " spawned.\n";
+	std::cout << "ScavTrap param constructor called.\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
@@ -39,10 +39,12 @@ ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
 	this->_energy_points = other._energy_points;
 	this->_attack_damage = other._attack_damage;
 	this->is_guarding = other.is_guarding;
+	std::cout << "ScavTrap copy constructor called.\n";
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 {
+	std::cout << "ScavTrap copy assignment operator called.\n";
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -56,7 +58,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap named " << this->_name << " has died!\n";
+	std::cout << "ScavTrap default deconstructor called.\n";
 }
 
 void	ScavTrap::guardGate(void)

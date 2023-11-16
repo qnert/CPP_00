@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:59:26 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 11:22:21 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 10:51:14 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap(void): ClapTrap()
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
-	std::cout << "FragTrap named " << this->_name << " spawned.\n";
+	std::cout << "FragTrap default constructor called.\n";
 }
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
@@ -27,11 +27,12 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 50;
-	std::cout << "FragTrap named " << this->_name << " spawned.\n";
+	std::cout << "FragTrap param constructor called.\n";
 }
 
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 {
+	std::cout << "FragTrap copy constructor called.\n";
 	this->_name = other._name;
 	this->_hit_points = other._hit_points;
 	this->_energy_points = other._energy_points;
@@ -41,6 +42,7 @@ FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 
 FragTrap&	FragTrap::operator=(const FragTrap& other)
 {
+	std::cout << "FragTrap copy assignment operator called.\n";
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -54,7 +56,7 @@ FragTrap&	FragTrap::operator=(const FragTrap& other)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap named " << this->_name << " has died!\n";
+	std::cout << "FragTrap default deconstructor called.\n";
 }
 
 void	FragTrap::highFivesGuys(void)
