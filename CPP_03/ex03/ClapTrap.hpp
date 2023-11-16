@@ -6,16 +6,13 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:40:30 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 12:31:46 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:22:18 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#pragma once
 
 #include <iostream>
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 
 class ClapTrap
 {
@@ -36,6 +33,3 @@ class ClapTrap
 	ClapTrap&	operator=(const ClapTrap& other);
 	~ClapTrap(void);
 };
-
-
-#endif

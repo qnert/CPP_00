@@ -6,12 +6,11 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:32:27 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 12:51:12 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:08:54 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#pragma once
 
 #include "ClapTrap.hpp"
 
@@ -30,5 +29,3 @@ class ScavTrap: virtual public ClapTrap
 	ScavTrap&	operator=(const ScavTrap& other);
 	~ScavTrap(void);
 };
-
-#endif

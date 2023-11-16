@@ -6,12 +6,11 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:00:10 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 12:51:20 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/16 11:08:49 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#pragma once
 
 #include "ClapTrap.hpp"
 
@@ -29,5 +28,3 @@ class FragTrap: virtual public ClapTrap
 	FragTrap&	operator=(const FragTrap& other);
 	~FragTrap(void);
 };
-
-#endif
