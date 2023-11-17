@@ -6,17 +6,17 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:25:20 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:58:24 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/17 14:23:41 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
 int main()
 {
-	Animal*	pets[6];
+	AAnimal*	pets[6];
 
 	for (int i = 0; i < 6; i++)\
 	{

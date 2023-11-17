@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 12:25:20 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:58:24 by skunert          ###   ########.fr       */
+/*   Created: 2023/11/16 15:11:11 by skunert           #+#    #+#             */
+/*   Updated: 2023/11/16 15:55:47 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-int main()
+Brain::Brain(void)
 {
-	Animal*	pets[6];
+	std::cout << "Brain default constructor called.\n";
+}
 
-	for (int i = 0; i < 6; i++)\
+Brain::Brain(const Brain& other)
+{
+	*this = other;
+}
+
+Brain&	Brain::operator=(const Brain& other)
+{
+	if (this != &other)
 	{
-		if (i > 2)
-			pets[i] = new Cat;
-		else
-			pets[i] = new Dog;
+		for (int i = 0; i < 100; i++)
+			this->_ideas[i] = other._ideas[i];
 	}
+	return (*this);
+}
 
-	for (int i = 0; i < 6; i++)
-		pets[i]->makeSound();
-
-	for (int i = 0; i < 6; i++)
-		delete (pets[i]);
-	system("leaks pets");
-	return 0;
+Brain::~Brain(void)
+{
+	std::cout << "Brain default deconstructor called.\n";
 }

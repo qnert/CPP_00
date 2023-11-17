@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 12:25:20 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:58:24 by skunert          ###   ########.fr       */
+/*   Created: 2023/11/16 12:11:14 by skunert           #+#    #+#             */
+/*   Updated: 2023/11/16 15:59:25 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+#include "Brain.hpp"
+
+class AAnimal
 {
-	Animal*	pets[6];
+	protected:
+		std::string _type;
 
-	for (int i = 0; i < 6; i++)\
-	{
-		if (i > 2)
-			pets[i] = new Cat;
-		else
-			pets[i] = new Dog;
-	}
+	public:
+		virtual void	makeSound(void) const = 0;
+		std::string		getType(void) const;
 
-	for (int i = 0; i < 6; i++)
-		pets[i]->makeSound();
-
-	for (int i = 0; i < 6; i++)
-		delete (pets[i]);
-	system("leaks pets");
-	return 0;
-}
+	AAnimal(void);
+	AAnimal(const AAnimal& other);
+	AAnimal&	operator=(const AAnimal& other);
+	virtual	~AAnimal(void);
+};

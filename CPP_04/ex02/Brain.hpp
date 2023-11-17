@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 12:25:20 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:58:24 by skunert          ###   ########.fr       */
+/*   Created: 2023/11/16 15:08:24 by skunert           #+#    #+#             */
+/*   Updated: 2023/11/17 14:15:23 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+
+class	Brain
 {
-	Animal*	pets[6];
+	private:
+		std::string	_ideas[100];
 
-	for (int i = 0; i < 6; i++)\
-	{
-		if (i > 2)
-			pets[i] = new Cat;
-		else
-			pets[i] = new Dog;
-	}
+	public:
 
-	for (int i = 0; i < 6; i++)
-		pets[i]->makeSound();
-
-	for (int i = 0; i < 6; i++)
-		delete (pets[i]);
-	system("leaks pets");
-	return 0;
-}
+	Brain(void);
+	Brain(const Brain& other);
+	Brain&	operator=(const Brain& other);
+	~Brain(void);
+};
