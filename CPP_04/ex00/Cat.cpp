@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:24:10 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:20:33 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/17 13:29:07 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Cat&	Cat::operator=(const Cat& other)
 {
 	if (this != &other)
 	{
-		Animal::operator=(other);
 		this->_type = other._type;
 	}
 	return (*this);
