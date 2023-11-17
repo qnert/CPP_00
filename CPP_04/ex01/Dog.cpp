@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:20:14 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 16:00:36 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/17 13:13:38 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,19 @@ Dog::Dog(void) : Animal()
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
-	*this = other;
+	this->_type = other._type;
+	this->brain = new Brain(*(other.brain));
 }
 
 Dog&	Dog::operator=(const Dog& other)
 {
 	if (this != &other)
+	{
+		Animal::operator=(other);
 		this->_type = other._type;
+		delete (this->brain);
+		this->brain = new Brain(*(other.brain));
+	}
 	return (*this);
 }
 
