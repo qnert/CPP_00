@@ -6,13 +6,15 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:18:09 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/18 12:37:23 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 18:35:26 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+#include "ICharacter.hpp"
 #include "AMateria.hpp"
 
 class Cure: public AMateria

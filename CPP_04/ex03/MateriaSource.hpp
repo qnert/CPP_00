@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 12:01:39 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 18:34:33 by skunert          ###   ########.fr       */
+/*   Created: 2023/11/19 14:46:13 by skunert           #+#    #+#             */
+/*   Updated: 2023/11/19 18:40:07 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "IMateriaSource.hpp"
 
-class ICharacter;
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-class AMateria
+class IMateriaSource;
+class AMateria;
+class MateriaSource: public IMateriaSource
 {
-	protected:
-		std::string	_type;
-
+	private:
+		AMateria*	_slots[4];
 	public:
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		void		learnMateria(AMateria*);
+		AMateria*	createMateria(std::string const & type);
 
-	AMateria(void);
-	AMateria(std::string const & type);
-	AMateria(const AMateria& other);
-	AMateria&	operator=(const AMateria& other);
-	virtual ~AMateria(void);
+	MateriaSource(void);
+	MateriaSource(const MateriaSource& other);
+	MateriaSource&	operator=(const MateriaSource& other);
+	~MateriaSource(void);
 };

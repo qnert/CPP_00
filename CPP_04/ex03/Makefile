@@ -2,7 +2,7 @@ CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = pets
 
-SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp
+SRCS = AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

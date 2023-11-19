@@ -6,13 +6,18 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:40:11 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 14:01:56 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 18:13:42 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "IMateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
+
 
 int main()
 {

@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 13:06:32 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 13:56:06 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 18:04:56 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Character::Character(void)
 {
 	std::cout << "Character default constructor called.\n";
 	this->_name = "Mr. X";
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 		this->_slots[i++] = NULL;
 }
 
@@ -24,7 +24,7 @@ Character::Character(std::string name)
 {
 	std::cout << "Character default constructor called.\n";
 	this->_name = name;
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 		this->_slots[i++] = NULL;
 }
 
@@ -56,7 +56,7 @@ std::string const&	Character::getName() const
 
 void 	Character::equip(AMateria* m)
 {
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (this->_slots[i] == NULL)
 		{
