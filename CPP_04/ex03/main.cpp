@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:40:11 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 18:13:42 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 20:54:39 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+	// system("leaks pets");
 	return 0;
 }

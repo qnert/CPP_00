@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 13:06:32 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 18:04:56 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 20:42:01 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ Character::Character(void)
 	std::cout << "Character default constructor called.\n";
 	this->_name = "Mr. X";
 	for (int i = 0; i < 4; i++)
-		this->_slots[i++] = NULL;
+		this->_slots[i] = NULL;
 }
 
 Character::Character(std::string name)
 {
-	std::cout << "Character default constructor called.\n";
+	std::cout << "Character param constructor called.\n";
 	this->_name = name;
 	for (int i = 0; i < 4; i++)
-		this->_slots[i++] = NULL;
+		this->_slots[i] = NULL;
 }
 
 Character::Character(const Character& other)
