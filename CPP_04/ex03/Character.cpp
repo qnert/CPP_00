@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 13:06:32 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 20:42:01 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:16:54 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ Character&	Character::operator=(const Character& other)
 Character::~Character(void)
 {
 	std::cout << "Character default deconstructor called.\n";
+	for (int i = 3; i >= 0; i--)
+		delete (this->_slots[i]);
 }
 
 std::string const&	Character::getName() const
