@@ -6,20 +6,20 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:24:10 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:43:41 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 14:08:12 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : AAnimal()
 {
 	std::cout << "Cat default constructor called.\n";
 	this->_type = "Cat";
 	this->brain = new Brain();
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : AAnimal(other)
 {
 	this->_type = other._type;
 	this->brain = new Brain(*(other.brain));

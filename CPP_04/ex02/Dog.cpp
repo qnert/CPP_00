@@ -6,20 +6,20 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:20:14 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:43:49 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 14:09:22 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void) : AAnimal()
 {
 	std::cout << "Dog default constructor called.\n";
 	this->_type = "Dog";
 	this->brain = new Brain();
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) : AAnimal(other)
 {
 	this->_type = other._type;
 	this->brain = new Brain(*(other.brain));

@@ -6,16 +6,14 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 13:03:01 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 18:32:59 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/19 20:58:10 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "ICharacter.hpp"
-
-class AMateria;
-class ICharacter;
+#include "AMateria.hpp"
 
 class Character: public ICharacter
 {
