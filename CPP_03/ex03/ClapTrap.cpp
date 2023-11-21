@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:45:59 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 10:48:11 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/21 18:28:38 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->_hit_points = 10;
 	this->_energy_points = 10;
 	this->_attack_damage = 0;
-	std::cout << "ClapTrap param constructor called.\n";
+	std::cout << "ClapTrap param  (" << name <<") constructor called.\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)

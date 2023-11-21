@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:59:26 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 10:49:49 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/21 18:27:56 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 50;
-	std::cout << "FragTrap param constructor called.\n";
+	std::cout << "FragTrap param (" << name <<") constructor called.\n";
 }
 
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)

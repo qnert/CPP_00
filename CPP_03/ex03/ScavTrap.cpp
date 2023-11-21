@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:44:34 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 10:50:46 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/21 18:28:11 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
 	this->is_guarding = false;
-	std::cout << "ScavTrap param constructor called.\n";
+	std::cout << "ScavTrap param (" << name <<") constructor called.\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
