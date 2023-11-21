@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/21 17:57:20 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/21 22:05:00 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	working_structure(void)
 		std::cout << Simon;
 	}
 	catch (std::exception& e){
-		std::cerr << "Exception caught!\n";
+		std::cerr << e.what();
 	}
 }
 
@@ -36,7 +36,7 @@ void	false_grade_decrease(void)
 		Simon.decreaseGrade();
 	}
 	catch (std::exception& e){
-		std::cerr << "Exception caught!\n";
+		std::cerr << e.what();
 	}
 }
 
@@ -48,7 +48,7 @@ void	false_grade_increase(void)
 		Simon.increaseGrade();
 	}
 	catch (std::exception& e){
-		std::cerr << "Exception caught!\n";
+		std::cerr << e.what();
 	}
 }
 
@@ -59,13 +59,13 @@ int main(void)
 		Bureaucrat Peter("Peter", 151);
 	}
 	catch (std::exception& e){
-		std::cerr << "Exception caught!\n";
+		std::cerr << e.what();
 	}
 	try{
 		Bureaucrat Klaus("Klaus", -9);
 	}
 	catch (std::exception& e){
-		std::cerr << "Exception caught!\n";
+		std::cerr << e.what();
 	}
 	std::cout << std::endl;
 	std::cout << GREEN << "Working use: \n" << RESET;
