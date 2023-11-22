@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:31:36 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/21 21:59:11 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/22 10:17:34 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,7 @@ void	Bureaucrat::decreaseGrade(void)
 		this->_grade++;
 }
 
-void	Bureaucrat::signForm(Form& other)
-{
-	if (other.getSignedstatus() == true){
-		std::cout << "Form " << other.getName() << " is already signed.\n";
-		return ;
-	}
-	if (this->_grade <= other.getRequirementsign())
-		std::cout << "Bureaucrat " << this->getName() << " signed " << other.getName() << std::endl;
-	else
-		std::cout << "Bureaucrat " << this->getName() << " couldn't sign Form " << other.getName() << " because of too low grade!\n";
+void	Bureaucrat::signForm(Form& other){
 	other.beSigned(*this);
 }
 

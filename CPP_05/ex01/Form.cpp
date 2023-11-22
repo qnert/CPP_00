@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:01:49 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/21 22:03:41 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/22 10:20:08 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,20 @@ int	Form::getRequirementexec(void) const{
 }
 
 void	Form::beSigned(Bureaucrat& other){
-	if (this->_required_grade_sign <= other.getGrade())
+	if (this->getSignedstatus() == true){
+		std::cout << "Form " << this->getName() << " is already signed.\n";
+		return ;
+	}
+	if (this->getRequirementsign() >= other.getGrade())
+	{
+		std::cout << "Bureaucrat " << other.getName() << " signed " << this->getName() << std::endl;
 		this->_is_signed = true;
+	}
 	else
+	{
+		std::cout << "Bureaucrat " << other.getName() << " couldn't sign Form " << this->getName() << " because of too low grade!\n";
 		throw (GradeTooLowException());
+	}
 }
 
 //exceptions funcs
