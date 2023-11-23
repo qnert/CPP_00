@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:18:09 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 18:35:26 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:41:46 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 
 class Cure: public AMateria
 {
-	protected:
-		std::string	_type;
-
 	public:
 		std::string const & getType() const; //Returns the materia type
 		Cure* clone() const;

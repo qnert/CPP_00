@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:26:47 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 18:35:50 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:41:50 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 
 class Ice : public AMateria
 {
-	protected:
-		std::string	_type;
-
 	public:
 		std::string const & getType() const; //Returns the materia type
 		Ice* clone() const;
