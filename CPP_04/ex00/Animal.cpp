@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:14:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 13:02:32 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:45:36 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Animal&	Animal::operator=(const Animal& other)
 
 Animal::~Animal(void)
 {
-	std::cout << "Animal default deconstructor called.\n";
+	std::cout << "Animal default destructor called.\n";
 }
 
 void	Animal::makeSound(void) const

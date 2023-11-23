@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:20:14 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 13:29:11 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:46:01 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Dog&	Dog::operator=(const Dog& other)
 
 Dog::~Dog(void)
 {
-	std::cout << "Dog default deconstructor called.\n";
+	std::cout << "Dog default destructor called.\n";
 }
 
 void	Dog::makeSound(void) const
