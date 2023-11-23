@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 05:45:59 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 10:48:39 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:41:59 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap default deconstructor called.\n";
+	std::cout << "ClapTrap default destructor called.\n";
 }
 
 //member functions

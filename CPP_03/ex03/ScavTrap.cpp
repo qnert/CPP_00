@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:44:34 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/21 18:28:11 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:43:00 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap default deconstructor called.\n";
+	std::cout << "ScavTrap default destructor called.\n";
 }
 
 void	ScavTrap::guardGate(void)

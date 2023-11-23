@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:59:26 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/23 13:58:46 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:42:55 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ FragTrap&	FragTrap::operator=(const FragTrap& other)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap default deconstructor called.\n";
+	std::cout << "FragTrap default destructor called.\n";
 }
 
 void	FragTrap::highFivesGuys(void)

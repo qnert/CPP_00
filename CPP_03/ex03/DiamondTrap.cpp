@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:36:19 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/23 13:59:36 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:42:51 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "DiamondTrap default deconstructor called.\n";
+	std::cout << "DiamondTrap default destructor called.\n";
 }
 
 void	DiamondTrap::whoAmI(void)
