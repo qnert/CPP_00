@@ -32,7 +32,7 @@ AAnimal&	AAnimal::operator=(const AAnimal& other)
 
 AAnimal::~AAnimal(void)
 {
-	std::cout << "AAnimal default deconstructor called.\n";
+	std::cout << "AAnimal default destructor called.\n";
 }
 
 std::string	AAnimal::getType(void) const

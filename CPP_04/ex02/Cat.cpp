@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:24:10 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 14:08:12 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:58:57 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Cat&	Cat::operator=(const Cat& other)
 
 Cat::~Cat(void)
 {
-	std::cout << "Cat default deconstructor called.\n";
+	std::cout << "Cat default destructor called.\n";
 	delete (this->brain);
 }
 
