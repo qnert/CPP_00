@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:40:11 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/23 17:02:17 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 19:56:39 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	test_from_subject(void)
 void	test_with_unequip(void)
 {
 	IMateriaSource* src = new MateriaSource();
-	// AMateria*		trash[4];
-	// int				i = 0;
+	AMateria*		trash[4];
+	int				i = 0;
 	std::cout << std::endl;
 
 	src->learnMateria(new Ice());
@@ -53,11 +53,10 @@ void	test_with_unequip(void)
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
+	trash[i++] = tmp;
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	// tmp = new Ice;
-	// trash[i++] = tmp;
-	// me->equip(tmp);
+	trash[i++] = tmp;
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
@@ -69,15 +68,15 @@ void	test_with_unequip(void)
 	delete bob;
 	delete me;
 	delete src;
-	// for (int x = 0; x < i; x++)
-	// 	delete trash[x];
+	for (int x = 0; x < i; x++)
+		delete trash[x];
 }
 
 int main()
 {
-	test_from_subject();
+// 	test_from_subject();
 
-	// test_with_unequip();
+	test_with_unequip();
 	// system("leaks pets");
 	return 0;
 }
