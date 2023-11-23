@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:34:28 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 20:54:20 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:42:25 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& other)
 
 MateriaSource::~MateriaSource(void)
 {
-	std::cout << "MateriaSource default deconstructor called.\n";
+	std::cout << "MateriaSource default destructor called.\n";
 	for (int i = 0; i < 4; i++)
 		delete (this->_slots[i]);
 }

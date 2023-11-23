@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:06:19 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/18 12:43:35 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:41:47 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ AMateria&	AMateria::operator=(const AMateria& other)
 
 AMateria::~AMateria(void)
 {
-	std::cout << "AMateria default deconstructor called.\n";
+	std::cout << "AMateria default destructor called.\n";
 }
 
 std::string const& AMateria::getType(void) const

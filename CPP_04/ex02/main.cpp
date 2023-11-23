@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:25:20 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/17 14:23:41 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:58:31 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int main()
 
 	for (int i = 0; i < 6; i++)
 		delete (pets[i]);
-	system("leaks pets");
+	// system("leaks pets");
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:25:05 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 14:34:28 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:42:14 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Ice&	Ice::operator=(const Ice& other)
 
 Ice::~Ice(void)
 {
-	std::cout << "Ice default deconstructor called.\n";
+	std::cout << "Ice default destructor called.\n";
 }
 
 std::string const& Ice::getType(void) const

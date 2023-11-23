@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:20:18 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/19 14:03:32 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:42:08 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cure&	Cure::operator=(const Cure& other)
 
 Cure::~Cure(void)
 {
-	std::cout << "Cure default deconstructor called.\n";
+	std::cout << "Cure default destructor called.\n";
 }
 
 std::string const& Cure::getType(void) const
