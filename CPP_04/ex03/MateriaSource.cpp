@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:34:28 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/23 16:42:25 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:45:02 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ AMateria*	MateriaSource::createMateria(std::string const& type)
 	else if (type.compare("cure") == 0)
 		return ((AMateria*) new Cure);
 	else
+	{
+		std::cout << "The type given matches no valid materia.\n";
 		return (NULL);
+	}
 }

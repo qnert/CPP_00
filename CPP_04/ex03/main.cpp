@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:40:11 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/23 16:40:51 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:44:14 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	test_from_subject(void)
 	delete me;
 	delete src;
 }
+
 void	test_with_unequip(void)
 {
 	AMateria*		trash[2];
