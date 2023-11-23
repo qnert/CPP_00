@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 13:06:32 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/23 16:42:03 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:55:40 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,14 @@ Character&	Character::operator=(const Character& other)
 	{
 		this->_name = other._name;
 		for (int i = 0; i < 4; i++)
-			this->_slots[i] = other._slots[i];
+		{
+			if (this->_slots[i] != NULL)
+				delete this->_slots[i];
+			if (other._slots[i] != NULL)
+				this->_slots[i] = other._slots[i]->clone();
+			else
+				this->_slots[i] = NULL;
+		}
 	}
 	return (*this);
 }
