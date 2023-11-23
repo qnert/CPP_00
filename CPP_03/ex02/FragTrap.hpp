@@ -6,20 +6,17 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:00:10 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/15 11:15:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 12:20:39 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ClapTrap.hpp"
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
+#include "ClapTrap.hpp"
+
 class FragTrap: public ClapTrap
 {
-	private:
-		bool	is_guarding;
-
 	public:
 		void	highFivesGuys(void);
 

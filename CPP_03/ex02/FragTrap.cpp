@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:59:26 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/16 11:37:01 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/23 12:20:31 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 	this->_hit_points = other._hit_points;
 	this->_energy_points = other._energy_points;
 	this->_attack_damage = other._attack_damage;
-	this->is_guarding = other.is_guarding;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& other)
@@ -49,7 +48,6 @@ FragTrap&	FragTrap::operator=(const FragTrap& other)
 		this->_hit_points = other._hit_points;
 		this->_energy_points = other._energy_points;
 		this->_attack_damage = other._attack_damage;
-		this->is_guarding = other.is_guarding;
 	}
 	return (*this);
 }
