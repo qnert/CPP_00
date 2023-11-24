@@ -6,31 +6,35 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/22 10:21:29 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:00:41 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-int main(void)
+void	robotomy_chances(void)
 {
 	try{
-		Form 		F1("FBI", 45, 10);
-		Bureaucrat	Thorben("Thorben", 5);
-		Bureaucrat	Louis("Louis", 50);
+		Bureaucrat	bob("bob", 44);
+		RobotomyRequestForm Shrub("bender");
 
 		std::cout << std::endl;
-		std::cout << Thorben;
-		std::cout << Louis;
-		std::cout << F1;
-		std::cout << std::endl;
-		F1.beSigned(Thorben);
-		Thorben.signForm(F1);
+		Shrub.execute(bob);
+		system("sleep 1");
+		Shrub.execute(bob);
+		system("sleep 1");
+		Shrub.execute(bob);
+		system("sleep 1");
+		Shrub.execute(bob);
 		std::cout << std::endl;
 	}
 	catch (std::exception& e)
 	{
 		std::cout << e.what();
 	}
+}
+int main(void)
+{
+	robotomy_chances();
 }

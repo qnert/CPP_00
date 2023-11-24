@@ -1,8 +1,8 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = pets
+NAME = form
 
-SRCS = Bureaucrat.cpp main.cpp
+SRCS = Bureaucrat.cpp main.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

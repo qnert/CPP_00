@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 20:16:21 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/22 16:35:29 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/24 15:02:57 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class AForm
 		int					getRequirementsign(void) const;
 		int					getRequirementexec(void) const;
 		void				beSigned(class Bureaucrat& other);
-		virtual	void		execute(Bureaucrat const& executor);
+		virtual	void		execute(Bureaucrat const& executor) = 0;
 
 	AForm(void);
 	AForm(std::string name, int req_sign, int req_exec);

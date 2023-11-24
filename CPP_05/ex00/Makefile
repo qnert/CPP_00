@@ -1,6 +1,6 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = pets
+NAME = bureaucrat
 
 SRCS = main.cpp Bureaucrat.cpp
 
