@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:24:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/22 16:31:44 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:17:53 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Bureaucrat
 		void				increaseGrade(void);
 		void				decreaseGrade(void);
 		void				signForm(class AForm& other);
+		void				executeForm(class AForm& other);
 
 	Bureaucrat(void);
 	Bureaucrat(std::string name, int grade);

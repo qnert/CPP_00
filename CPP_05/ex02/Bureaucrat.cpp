@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:31:36 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/22 16:31:59 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/24 18:04:32 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,16 @@ void	Bureaucrat::decreaseGrade(void)
 void	Bureaucrat::signForm(AForm& other){
 	other.beSigned(*this);
 }
+
+void	Bureaucrat::executeForm(class AForm& other)
+{
+	if (this->getGrade() > other.getRequirementexec())
+		throw GradeTooLowException();
+	else{
+		other.execute(*this);
+	}
+}
+
 
 //exception functions
 const char*	Bureaucrat::GradeTooHighException::what() const throw()

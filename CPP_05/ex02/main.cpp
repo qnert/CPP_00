@@ -6,26 +6,44 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/24 17:00:41 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/24 18:12:57 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-void	robotomy_chances(void)
+// void	robotomy_test(void)
+// {
+// 	try{
+// 		Bureaucrat	bob("bob", 44);
+// 		RobotomyRequestForm Shrub("bender");
+
+// 		std::cout << std::endl;
+// 		Shrub.execute(bob);
+// 		system("sleep 1");
+// 		Shrub.execute(bob);
+// 		system("sleep 1");
+// 		Shrub.execute(bob);
+// 		system("sleep 1");
+// 		Shrub.execute(bob);
+// 		bob.executeForm(Shrub);
+// 		std::cout << std::endl;
+// 	}
+// 	catch (std::exception& e)
+// 	{
+// 		std::cout << e.what();
+// 	}
+// }
+
+void	shrubbery_test(void)
 {
 	try{
 		Bureaucrat	bob("bob", 44);
-		RobotomyRequestForm Shrub("bender");
+		ShrubberyCreationForm Shrub("home");
 
 		std::cout << std::endl;
-		Shrub.execute(bob);
-		system("sleep 1");
-		Shrub.execute(bob);
-		system("sleep 1");
-		Shrub.execute(bob);
-		system("sleep 1");
 		Shrub.execute(bob);
 		std::cout << std::endl;
 	}
@@ -34,7 +52,29 @@ void	robotomy_chances(void)
 		std::cout << e.what();
 	}
 }
+
+void	presidential_test(void)
+{
+	try{
+		Bureaucrat BOB("bob", 5);
+		PresidentialPardonForm P1("The evaluator");
+
+		std::cout << std::endl;
+		BOB.executeForm(P1);
+		P1.execute(BOB);
+		P1.beSigned(BOB);
+		P1.beSigned(BOB);
+		std::cout << std::endl;
+	}
+	catch (std::exception& e){
+		std::cout << e.what();
+	}
+}
+
 int main(void)
 {
-	robotomy_chances();
+	// robotomy_test();
+	// shrubbery_test();
+	presidential_test();
+	return (0);
 }

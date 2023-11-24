@@ -53,9 +53,9 @@ void	RobotomyRequestForm::execute(Bureaucrat const& executor)
 		srand((unsigned) time(&now));
 		int	random = rand() % 100;
 		if (random > 50)
-			std::cout << "Robotomy on " << this->_target << " succesfully done!\n";
+			std::cout << this->getName() << " executed by " << executor.getName() << " on " << this->_target << " with great success." << std::endl;
 		else
-			std::cout << "Robotomy  on " << this->_target << " did not succeed!\n";
+			std::cout << executor.getName() << " executed a " << this->getName() << " on " << this->_target << " without success!\n";
 	}
 }
 

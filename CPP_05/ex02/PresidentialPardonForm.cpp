@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:07:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/24 17:09:01 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/24 18:12:16 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void	PresidentialPardonForm::execute(Bureaucrat const& executor)
 		throw GradeTooLowException();
 	else{
 		std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox.\n";
+		std::cout << executor.getName() << " successfully executed " << this->getName() << "." << std::endl;
 	}
 }

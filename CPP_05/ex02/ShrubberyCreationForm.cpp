@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:49:19 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/24 16:08:33 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/24 18:11:40 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,12 @@ void	ShrubberyCreationForm::execute(Bureaucrat const& executor)
 		std::ofstream	outfile(this->_target + "_shrubbery", std::ios::out);
 		if (outfile.is_open() == false){
 			std::cout << "File could not be created nor opened.\n";
+			std::cout << executor.getName() << " executed by " << this->getName() << " without success.\n";
 			return ;
 		}
 		outfile << "        ?X:.          \n?X=   ???X=:           \n??X=   |??X::          \n??X=   ???X=:          \n ?XX=  |??X=:          \n ??X== ???X=:    ===   \n  ??XX=!??X=:    ====  \n   ???XX??X=   :====   \n    ??????X=: .:====   \n      ????XX=======    \n       ???XXX===:      \n       |X?XX=:=:       \n       ????X=:         \n       |??XX:          \n-------????X:---=      \n       |X?XX:          \n";
 		outfile.close();
+		std::cout << executor.getName() << " successfully executed " << this->getName() << " with target " << this->_target << ".\n";
 	}
 }
 
