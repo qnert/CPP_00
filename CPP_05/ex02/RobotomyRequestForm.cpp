@@ -48,13 +48,14 @@ void	RobotomyRequestForm::execute(Bureaucrat const& executor)
 	if (executor.getGrade() > this->getRequirementexec())
 		throw GradeTooLowException();
 	else{
+		std::cout << "* drilling noise * \n";
 		time_t	now = time(0);
 		srand((unsigned) time(&now));
 		int	random = rand() % 100;
 		if (random > 50)
-			std::cout << "Robotomy succesfully done!\n";
+			std::cout << "Robotomy on " << this->_target << " succesfully done!\n";
 		else
-			std::cout << "Robotomy did not succeed!\n";
+			std::cout << "Robotomy  on " << this->_target << " did not succeed!\n";
 	}
 }
 
