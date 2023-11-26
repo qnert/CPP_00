@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/26 16:07:57 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/26 16:13:28 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,11 @@ void	robotomy(void)
 void	failure(void)
 {
 	try{
+		Intern		Pete;
 		AForm*		new_form;
 		Bureaucrat	Tom("Tom", 10);
 
-		new_form = Intern::makeForm("notexisting", "nirvana");
+		new_form = Pete.makeForm("notexisting", "nirvana");
 		if (!new_form)
 			return ;
 		Tom.executeForm(*new_form);
