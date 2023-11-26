@@ -42,7 +42,7 @@ AForm&	AForm::operator=(AForm const& other)
 }
 
 AForm::~AForm(void){
-	std::cout << "AForm default deconstructor called.\n";
+	std::cout << "AForm default destructor called.\n";
 }
 
 //member functions
