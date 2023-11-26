@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:31:36 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/26 15:54:14 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/26 16:00:06 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& other)
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Bureaucrat default deconstructor called.\n";
+	std::cout << "Bureaucrat default destructor called.\n";
 }
 
 //member functions

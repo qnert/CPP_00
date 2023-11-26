@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:01:49 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/22 10:20:08 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:59:53 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Form&	Form::operator=(Form const& other)
 }
 
 Form::~Form(void){
-	std::cout << "Form default deconstructor called.\n";
+	std::cout << "Form default destructor called.\n";
 }
 
 //member functions
