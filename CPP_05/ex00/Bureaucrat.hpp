@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:24:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/21 17:57:08 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:50:39 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 class Bureaucrat
 {
 	private:
-		std::string			_name;
+		const std::string	_name;
 		int					_grade;
 
 	public:

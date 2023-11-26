@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:31:36 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/21 15:01:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:54:14 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 	std::cout << "Bureaucrat default constructor called.\n";
 };
 
-Bureaucrat::Bureaucrat(Bureaucrat const& other)
+Bureaucrat::Bureaucrat(Bureaucrat const& other) : _name(other.getName())
 {
 	*this = other;
 }
@@ -38,10 +38,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const& other)
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& other)
 {
 	if (this != &other)
-	{
-		this->_name = other._name;
 		this->_grade = other._grade;
-	}
 	return (*this);
 }
 
