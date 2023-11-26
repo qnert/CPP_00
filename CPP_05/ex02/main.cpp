@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/26 16:06:20 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/26 16:07:07 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-void	robotomy_test(void)
-{
-	try{
-		Bureaucrat	bob("bob", 44);
-		RobotomyRequestForm Shrub("bender");
+// void	robotomy_test(void)
+// {
+// 	try{
+// 		Bureaucrat	bob("bob", 44);
+// 		RobotomyRequestForm Shrub("bender");
 
-		std::cout << std::endl;
-		Shrub.execute(bob);
-		system("sleep 1");
-		Shrub.execute(bob);
-		system("sleep 1");
-		Shrub.execute(bob);
-		system("sleep 1");
-		Shrub.execute(bob);
-		system("sleep 1");
-		bob.executeForm(Shrub);
-		std::cout << std::endl;
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what();
-	}
-}
+// 		std::cout << std::endl;
+// 		Shrub.execute(bob);
+// 		system("sleep 1");
+// 		Shrub.execute(bob);
+// 		system("sleep 1");
+// 		Shrub.execute(bob);
+// 		system("sleep 1");
+// 		Shrub.execute(bob);
+// 		system("sleep 1");
+// 		bob.executeForm(Shrub);
+// 		std::cout << std::endl;
+// 	}
+// 	catch (std::exception& e)
+// 	{
+// 		std::cout << e.what();
+// 	}
+// }
 
 void	shrubbery_test(void)
 {
@@ -74,8 +74,8 @@ void	presidential_test(void)
 
 int main(void)
 {
-	robotomy_test();
-	// shrubbery_test();
+	// robotomy_test();
+	shrubbery_test();
 	// presidential_test();
 	return (0);
 }
