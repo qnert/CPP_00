@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/26 16:13:28 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/26 16:15:47 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	shrubbery(void)
 		Bureaucrat	Tom("Tom", 10);
 
 		new_form = Pete.makeForm("shrubbery creation", "nirvana");
+		if (!new_form)
+			return ;
 		Tom.executeForm(*new_form);
 		delete (new_form);
 	}
@@ -39,6 +41,8 @@ void	presidential(void)
 		Bureaucrat	Tom("Tom", 5);
 
 		new_form = Pete.makeForm("presidential pardon", "nirvana");
+		if (!new_form)
+			return ;
 		Tom.executeForm(*new_form);
 		delete (new_form);
 	}
@@ -55,6 +59,8 @@ void	robotomy(void)
 		Bureaucrat	Tom("Tom", 10);
 
 		new_form = Pete.makeForm("robotomy request", "nirvana");
+		if (!new_form)
+			return ;
 		Tom.executeForm(*new_form);
 		delete (new_form);
 	}
