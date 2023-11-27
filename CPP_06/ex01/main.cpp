@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:13:12 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 18:13:35 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/27 18:54:06 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	main(void)
 {
-	Serializer S1;
-	return (0);
+
 }
