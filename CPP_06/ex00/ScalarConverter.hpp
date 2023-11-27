@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:34:52 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 17:15:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/27 18:37:32 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ class ScalarConverter
 {
 	public:
 		static void convert(std::string str);
+
+	ScalarConverter(void);
+	ScalarConverter(ScalarConverter const& other);
+	ScalarConverter&	operator=(ScalarConverter const& other);
+	~ScalarConverter(void);
 };
 
 bool	is_char(const std::string str);

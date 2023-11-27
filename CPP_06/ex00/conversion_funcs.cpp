@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:21:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 17:36:02 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/27 18:48:04 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	conversion_char(char c)
 	float	ft = static_cast<float>(c);
 	double	db = static_cast<double>(c);
 
-	std::cout << "char : " << c << std::endl;
+	std::cout << "char : '" << c << "'" << std::endl;
 	std::cout << "int : " << integer << std::endl;
 	std::cout << std::fixed << std::setprecision(1) << "float : " << ft << "f" << std::endl;
 	std::cout << std::fixed << std::setprecision(1) << "double : " << db << std::endl;
@@ -37,7 +37,7 @@ void	conversion_int(int nb)
 	else if (nb < 0 || nb > 127)
 		std::cout << "char : impossible" << std::endl;
 	else
-		std::cout << "char : " << c << std::endl;
+		std::cout << "char : '" << c << "'" << std::endl;
 	std::cout << "int : " << nb << std::endl;
 	std::cout << std::fixed << std::setprecision(1) << "float : " << ft << "f" << std::endl;
 	std::cout << std::fixed << std::setprecision(1) << "double : " << db << std::endl;
@@ -55,8 +55,8 @@ void	conversion_double(double db)
 	else if (nb < 0 || nb > 127)
 		std::cout << "char : impossible" << std::endl;
 	else
-		std::cout << "char : " << c << std::endl;
-	if (str.find(std::to_string(db)))
+		std::cout << "char : '" << c << "'" << std::endl;
+	if (str.find(std::to_string(db)) != std::string::npos)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << nb << std::endl;
@@ -77,7 +77,7 @@ void	conversion_float(float ft)
 		std::cout << "char : impossible" << std::endl;
 	else
 		std::cout << "char : '" << c << "'" << std::endl;
-	if (str.find(std::to_string(ft)))
+	if (str.find(std::to_string(ft)) != std::string::npos)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << nb << std::endl;
