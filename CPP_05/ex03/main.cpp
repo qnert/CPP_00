@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/26 16:15:47 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/27 14:10:37 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int main(void)
 {
 	// shrubbery();
 	// presidential();
-	// robotomy();
-	failure();
+	robotomy();
+	// failure();
 	return (0);
 }
