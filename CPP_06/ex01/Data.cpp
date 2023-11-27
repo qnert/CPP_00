@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:13:56 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 19:23:29 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/27 19:26:52 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Data::Data(void): _bytes(4), _type("integer")
 {}
 
-Data::Data(Data const& other){
+Data::Data(Data const& other): _bytes(other.getBytes()){
 	*this = other;
 }
 
