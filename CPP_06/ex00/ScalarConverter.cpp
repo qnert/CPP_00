@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:43:19 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 18:39:29 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/27 19:23:43 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ ScalarConverter&	ScalarConverter::operator=(ScalarConverter const& other){
 }
 
 ScalarConverter::~ScalarConverter(){}
+
+// member function
 
 void	ScalarConverter::convert(const std::string str)
 {
