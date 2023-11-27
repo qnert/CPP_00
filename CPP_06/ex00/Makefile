@@ -2,7 +2,7 @@ CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = convert_it
 
-SRCS = main.cpp ScalarConverter.cpp check_funcs.cpp display_funcs.cpp
+SRCS = main.cpp ScalarConverter.cpp check_funcs.cpp conversion_funcs.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:17:08 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 13:53:13 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/27 17:34:03 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ bool	is_double(const std::string str){
 		}
 		i++;
 	}
-	if (str.find('.') == 0)
+	if (str.find('.') == std::string::npos)
 		return (false);
 	return (true);
 }
@@ -72,14 +72,14 @@ bool	is_float(const std::string str){
 				return (false);
 			else if (str[i] == '.' && count == 0)
 				count++;
-			else if (str[i] == 'f' && i == str.length() - 1)
+			else if (str[i] == 'f' && i == str.length() - 1 && str[i - 1] != '.')
 				count++;
 			else
 				return (false);
 		}
 		i++;
 	}
-	if (str.find('.') == 0)
+	if (str.find('.') == std::string::npos)
 		return (false);
 	return (true);
 }
