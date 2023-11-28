@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:13:56 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 19:26:52 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/28 12:50:32 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 Data::Data(void): _bytes(4), _type("integer")
 {}
+
+Data::Data(std::string type, int bytes):  _bytes(bytes), _type(type)
+{};
 
 Data::Data(Data const& other): _bytes(other.getBytes()){
 	*this = other;
@@ -28,10 +31,17 @@ Data::~Data(void){}
 
 //getter functions
 
-const int	Data::getBytes(void) const{
+int	Data::getBytes(void) const{
 	return (this->_bytes);
 }
 
 const std::string	Data::getType(void) const{
 	return (this->_type);
+}
+
+std::ostream&	operator<<(std::ostream& os, Data const& other)
+{
+	os << "Data instance with the type " << other.getType() << " and with a byte value of " << other.getBytes()
+	<< std::endl;
+	return (os);
 }

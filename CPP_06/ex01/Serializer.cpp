@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializier.cpp                                    :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:21:50 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 19:23:51 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/28 14:19:21 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,10 @@ Serializer&	Serializer::operator=(Serializer const& other){
 Serializer::~Serializer(void) {}
 
 //member functions
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
+uintptr_t Serializer::serialize(Data* ptr){
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* Serializer::deserialize(uintptr_t raw){
+	return (reinterpret_cast<Data*>(raw));
+}
