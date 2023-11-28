@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:21:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 18:48:04 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/28 15:28:22 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	conversion_double(double db)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << nb << std::endl;
-	std::cout << std::fixed << "float : " << ft << "f" << std::endl;
-	std::cout << std::fixed << "double : " << db << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float : " << ft << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "double : " << db << std::endl;
 }
 
 void	conversion_float(float ft)
@@ -81,6 +81,6 @@ void	conversion_float(float ft)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << nb << std::endl;
-	std::cout << std::fixed << "float : " << ft << "f" << std::endl;
-	std::cout << std::fixed << "double : " << db << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float : " << ft << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "double : " << db << std::endl;
 }
