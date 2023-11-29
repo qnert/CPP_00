@@ -6,18 +6,19 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:37:53 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/28 15:05:06 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/29 15:03:13 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Basic.hpp"
+#include <ctime>
+#include <cstdlib>
 
 Base*	generate(void){
-	std::random_device rd;
-	std::mt19937 gen(rd());
 
-	std::uniform_int_distribution<int> distribution(0, 2);
-	int	n = distribution(gen);
+	std::srand(static_cast<unsigned int>(std::time(0)));
+
+	int n = std::rand() % 3;
 	switch (n){
 		case 0:
 			return (new A);
