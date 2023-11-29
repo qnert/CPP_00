@@ -49,10 +49,9 @@ void	RobotomyRequestForm::execute(Bureaucrat const& executor)
 		throw GradeTooLowException();
 	else{
 		std::cout << "* drilling noise * \n";
-		time_t	now = time(0);
-		srand((unsigned) time(&now));
-		int	random = rand() % 4;
-		if (random > 1)
+		std::srand(static_cast<unsigned int>(std::time(0)));
+		int n = std::rand() % 4;
+		if (n > 1)
 			std::cout << this->getName() << " executed by " << executor.getName() << " on " << this->_target << " with great success." << std::endl;
 		else
 			std::cout << executor.getName() << " executed a " << this->getName() << " on " << this->_target << " without success!\n";
