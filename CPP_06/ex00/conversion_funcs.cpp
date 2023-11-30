@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:21:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/30 18:22:23 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:58:40 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,6 @@ void	conversion_float(float ft)
 		std::cout << "int : " << nb << std::endl;
 	if (std::fmod(ft, 1.0f) == 0.0f && ft < 1000000.0f)
 		std::cout << std::fixed << std::setprecision(1);
-	if (db > __FLT_MAX__ || db < __FLT_MIN__)
-		std::cout  << "float : impossible" << std::endl;
-	else
-		std::cout  << "float : " << ft << "f" << std::endl;
+	std::cout  << "float : " << ft << "f" << std::endl;
 	std::cout << "double : " << db << std::endl;
 }
