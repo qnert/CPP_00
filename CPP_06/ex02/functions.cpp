@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:37:53 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/29 15:03:13 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/30 19:01:22 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ void	identify(Base* p){
 		std::cout << "Pointer type: A" << std::endl;
 	else if (dynamic_cast<B*>(p))
 		std::cout << "Pointer type: B" << std::endl;
-	else
+	else if (dynamic_cast<C*>(p))
 		std::cout << "Pointer type: C" << std::endl;
+	std::cout << "No derived class pointer found." << std::endl;
 }
 
 void identify(Base& p){
