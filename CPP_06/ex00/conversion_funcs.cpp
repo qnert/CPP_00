@@ -6,13 +6,15 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:21:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/28 15:28:22 by skunert          ###   ########.fr       */
+/*   Updated: 2023/11/30 18:22:23 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
 #include <iomanip>
-#include <cstring>
+#include <iostream>
 
 void	conversion_char(char c)
 {
@@ -56,20 +58,22 @@ void	conversion_double(double db)
 		std::cout << "char : impossible" << std::endl;
 	else
 		std::cout << "char : '" << c << "'" << std::endl;
-	if (str.find(std::to_string(db)) != std::string::npos)
+	if (str.find(std::to_string(db)) != std::string::npos || db > INT_MAX)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << nb << std::endl;
-	std::cout << std::fixed << std::setprecision(1) << "float : " << ft << "f" << std::endl;
-	std::cout << std::fixed << std::setprecision(1) << "double : " << db << std::endl;
+	if (std::fmod(ft, 1.0f) == 0.0f && ft < 1000000.0f)
+		std::cout << std::fixed << std::setprecision(1);
+	std::cout << "float : " << ft << "f" << std::endl;
+	std::cout << "double : " << db << std::endl;
 }
 
 void	conversion_float(float ft)
 {
 	char	c = static_cast<char>(ft);
-	int		nb = static_cast<int>(ft);
 	double	db = static_cast<double>(ft);
 	std::string str = "+inf+inff-inf-inffnannanf";
+	int	nb = static_cast<int>(ft);
 
 	if (nb >= 0 && nb < 32)
 		std::cout << "char : Non displayable" << std::endl;
@@ -77,10 +81,15 @@ void	conversion_float(float ft)
 		std::cout << "char : impossible" << std::endl;
 	else
 		std::cout << "char : '" << c << "'" << std::endl;
-	if (str.find(std::to_string(ft)) != std::string::npos)
+	if (str.find(std::to_string(ft)) != std::string::npos || db > INT_MAX)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << nb << std::endl;
-	std::cout << std::fixed << std::setprecision(1) << "float : " << ft << "f" << std::endl;
-	std::cout << std::fixed << std::setprecision(1) << "double : " << db << std::endl;
+	if (std::fmod(ft, 1.0f) == 0.0f && ft < 1000000.0f)
+		std::cout << std::fixed << std::setprecision(1);
+	if (db > __FLT_MAX__ || db < __FLT_MIN__)
+		std::cout  << "float : impossible" << std::endl;
+	else
+		std::cout  << "float : " << ft << "f" << std::endl;
+	std::cout << "double : " << db << std::endl;
 }
