@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:49:59 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/01 15:10:26 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/05 13:10:43 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Array<T>&	Array<T>::operator=(Array const& other){
 }
 
 template <typename T>
-T&		Array<T>::operator[](size_t index){
+T&		Array<T>::operator[](size_t index) const{
 	if (index >= this->_size){
 		throw (IndexOutOfRange());
 	}
@@ -57,7 +57,7 @@ Array<T>::~Array(void){
 }
 
 template <typename T>
-size_t	Array<T>::size(void){
+size_t	Array<T>::size(void) const{
 	return (this->_size);
 }
 

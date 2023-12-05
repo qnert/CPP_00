@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 17:07:24 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/29 13:22:14 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/05 13:10:31 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ class Array{
 			public:
 				virtual const char*	what() const throw();
 		};
-		size_t	size(void);
+		size_t	size(void) const;
 
 	Array(void);
 	Array(unsigned int n);
 	Array(Array const& other);
 	Array&	operator=(Array const& other);
-	T&		operator[](size_t index);
+	T&		operator[](size_t index) const;
 	~Array(void);
 };
 
