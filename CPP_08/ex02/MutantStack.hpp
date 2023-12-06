@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:41:03 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/06 15:40:39 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/06 15:49:41 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class MutantStack: public std::stack<T>{
 
 	public:
 		typedef typename std::stack<T>::container_type::iterator iterator;
-		using std::stack<T>::c;
-
 		iterator begin();
 		iterator end();
 
