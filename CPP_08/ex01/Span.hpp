@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 09:25:01 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/06 11:41:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/06 12:21:59 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@
 class Span{
 	private:
 		unsigned int		_n;
-		unsigned int		_curr_idx;
+		unsigned int		_curr_amount;
 		std::vector<int>	_vec;
 
 	public:
 		unsigned int	size(void) const;
+		unsigned int	get_curr_amount(void) const;
 		void			printSpan(void);
 		void			addNumber(int nb);
+		void			addRange(int nb, int amount);
 		int				shortestSpan(void);
 		int				longestSpan(void);
 
