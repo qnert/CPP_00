@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:43:29 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/06 15:47:22 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/06 16:18:30 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,11 @@ template <class T>
 MutantStack<T>::~MutantStack(){};
 
 template <class T>
-typename MutantStack<T>::iterator
-MutantStack<T>::begin(){
+typename MutantStack<T>::iterator	MutantStack<T>::begin(){
 	return (this->c.begin());
 }
 
 template <class T>
-typename MutantStack<T>::iterator
-MutantStack<T>::end(){
+typename MutantStack<T>::iterator	MutantStack<T>::end(){
 	return (this->c.end());
 }
