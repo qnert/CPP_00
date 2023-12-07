@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/07 17:00:54 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/07 21:42:47 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ bool	is_erasable(char c){
 	return (c == '-');
 }
 
-int	get_key_date(std::string& buff){
-	int	i = 0;
+int	get_key_date(std::string& buff, int i){
 	int	date = 0;
 	std::string	tmp;
 	while (buff[i] != ',' && buff[i]){i++;}
@@ -43,7 +42,7 @@ BitcoinExchange::BitcoinExchange(void){
 	if (!database.is_open())
 		throw (std::runtime_error("Database file was not found!\n"));
 	while (std::getline(database, buff)){
-		this->database[get_key_date(buff)] = get_value(buff);
+		this->database[get_key_date(buff, 0)] = get_value(buff);
 	}
 	database.close();
 }
