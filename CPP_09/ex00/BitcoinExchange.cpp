@@ -6,21 +6,15 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/07 16:53:52 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/07 17:00:54 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-struct CharToRemove {
-	char target;
-
-	CharToRemove(char c) : target(c) {}
-
-	bool operator()(char c) const {
-		return c == target;
-	}
-};
+bool	is_erasable(char c){
+	return (c == '-');
+}
 
 int	get_key_date(std::string& buff){
 	int	i = 0;
@@ -28,7 +22,7 @@ int	get_key_date(std::string& buff){
 	std::string	tmp;
 	while (buff[i] != ',' && buff[i]){i++;}
 	tmp =  buff.substr(0, i);
-	tmp.erase(std::remove_if(tmp.begin(), tmp.end(), CharToRemove('-')), tmp.end());
+	tmp.erase(std::remove_if(tmp.begin(), tmp.end(), is_erasable), tmp.end());
 	date = std::atoi(tmp.c_str());
 	return (date);
 }

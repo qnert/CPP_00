@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:16:27 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/07 16:57:30 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/07 17:10:15 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ std::string	get_infile_content(std::string str){
 }
 
 void	check_input_with_database(BitcoinExchange& BE1, std::string& buff){
-	(void) buff;
-	std::cout << BE1[20151224] << std::endl;
+	int	date = get_key_date(buff);
+	while (BE1.database.find(date) == BE1.database.end()){--date;}
+	std::cout << BE1[date] << std::endl;
 }
 
 int	main(int argc, char** argv){
