@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:17:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/06 18:55:11 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/07 15:12:44 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 
 class BitcoinExchange{
 	public:
-		std::map<std::string, std::string> database;
+		std::map<int, float> database;
 
 	public:
 
 	BitcoinExchange(void);
 	BitcoinExchange(BitcoinExchange const& other);
 	BitcoinExchange&	operator=(BitcoinExchange const& other);
-	std::string&		operator[](std::string key);
+	float&		operator[](int key);
 	~BitcoinExchange(void);
 };
+
+int	get_key_date(std::string& buff);

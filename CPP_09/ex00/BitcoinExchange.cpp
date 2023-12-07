@@ -6,24 +6,29 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/06 18:30:56 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/07 15:50:48 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-std::string	get_key(std::string& buff){
+int	get_key_date(std::string& buff){
 	int	i = 0;
+	int	date = 0;
+	std::string	tmp;
 	while (buff[i] != ','){i++;}
-	return (buff.substr(0, i));
+	tmp =  buff.substr(0, i);
+	tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
+	date = std::atoi(tmp.c_str());
+	return (date);
 }
 
-std::string	get_value(std::string& buff){
+float	get_value(std::string& buff){
 	int	i = 0;
 	while (buff[i] != ','){i++;}
 	int	check = i + 1;
 	while (buff[i] != '\n' && buff[i]){i++;}
-	return (buff.substr(check, i));
+	return (std::strtof(buff.substr(check, i).c_str(), nullptr));
 }
 
 BitcoinExchange::BitcoinExchange(void){
@@ -34,7 +39,7 @@ BitcoinExchange::BitcoinExchange(void){
 	if (!database.is_open())
 		throw (std::runtime_error("Database file was not found!\n"));
 	while (std::getline(database, buff)){
-		this->database[get_key(buff)] = get_value(buff);
+		this->database[get_key_date(buff)] = get_value(buff);
 	}
 	database.close();
 }
@@ -50,7 +55,7 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const& other){
 	return (*this);
 }
 
-std::string&		BitcoinExchange::operator[](std::string key){
+float&		BitcoinExchange::operator[](int key){
 	return (this->database[key]);
 }
 
