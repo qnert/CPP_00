@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:17:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/07 21:41:54 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/07 22:39:17 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,4 @@ class BitcoinExchange{
 	~BitcoinExchange(void);
 };
 
-int	get_key_date(std::string& buff, int i);
+int	get_key_date(std::string& buff, int i, char c);
