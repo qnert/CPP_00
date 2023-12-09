@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/07 22:39:29 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/09 13:51:43 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 bool	is_erasable(char c){
 	return (c == '-');
+}
+std::string	convert_back_to_date(int date){
+	std::string	str_date = std::to_string(date);
+	if (str_date.size() < 8)
+		return (str_date);
+	str_date.insert(4, "-");
+	str_date.insert(7, "-");
+	return (str_date);
 }
 
 int	get_key_date(std::string& buff, int i, char c){

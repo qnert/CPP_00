@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:16:27 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/07 22:42:10 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/09 13:50:24 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ int	check_input_with_database(BitcoinExchange& BE1, std::string& buff){
 	int	i = 0;
 	float	tmp;
 	int	date;
+	int	check;
 	while (buff[i]){
 		date = get_key_date(buff, i, '|');
 		while (buff[i] != '|' && buff[i]){
 			if(buff[i] == '\n'){
-				std::cout << "Error: bad input" << std::endl;
+				std::cout << "Error: bad input => " << convert_back_to_date(date) << std::endl;
 				break ;
 			}
 			i++;
@@ -65,8 +66,9 @@ int	check_input_with_database(BitcoinExchange& BE1, std::string& buff){
 			std::cout << "std::atoi fail " << tmp << std::endl;
 			return (-1);
 		}
+		check = date;
 		while (BE1.database.find(date) == BE1.database.end()){--date;}
-		std::cout << "date " << " => " << tmp << " = "  << BE1[date] * tmp << std::endl;
+		std::cout << convert_back_to_date(check) << " => " << tmp << " = "  << BE1[date] * tmp << std::endl;
 		i++;
 	}
 	return (0);
