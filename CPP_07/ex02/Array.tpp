@@ -6,9 +6,13 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:49:59 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/05 13:10:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/09 14:40:54 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#include "Array.hpp"
 
 template <typename T>
 Array<T>::Array(void){
