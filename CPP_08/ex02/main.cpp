@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:39:55 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/06 16:23:47 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/09 14:51:22 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,22 @@ int main()
 	mstack.push(0);
 	for (std::stack<int>::container_type::iterator i = mstack.begin(); i != mstack.end(); i++)
 		std::cout << *i << std::endl;
-	std::sort(mstack.begin(), mstack.end());
 	std::cout << std::endl << "You can even use the sort function in the algorithm header now: " << std::endl;
-	for (std::stack<int>::container_type::iterator i = mstack.begin(); i != mstack.end(); i++)
+	MutantStack<int>	mstack2;
+	mstack2.push(10);
+	mstack2.push(34);
+	mstack2.push(22);
+	mstack2.push(-6);
+	mstack2.push(-4);
+	mstack2.push(-42);
+	mstack2.push(1);
+	mstack2.push(789);
+	std::cout << "Before sorting" << std::endl;
+	for (std::stack<int>::container_type::iterator i = mstack2.begin(); i != mstack2.end(); i++)
+		std::cout << *i << std::endl;
+	std::sort(mstack2.begin(), mstack2.end());
+	std::cout << "After sorting" << std::endl;
+	for (std::stack<int>::container_type::iterator i = mstack2.begin(); i != mstack2.end(); i++)
 		std::cout << *i << std::endl;
 	return 0;
-
 }
