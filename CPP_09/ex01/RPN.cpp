@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:59:31 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 16:19:00 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:20:41 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ void	RPN::calculate_RPN(void){
 	std::stack<float>	calc;
 
 	for (int i = 0; this->_input[i] != '\0'; i++){
-		std::cout << this->_input[i] << std::endl;
 		if (this->_input[i] >= '0' && this->_input[i] <= '9')
 			calc.push(std::atof(&this->_input[i]));
 		else if (is_arithmetic_symbol(this->_input[i])){

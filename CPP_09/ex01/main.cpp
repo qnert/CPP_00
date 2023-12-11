@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:59:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 15:28:05 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:20:59 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int ac, char **av){
 	if (ac != 2)
 		return (-1);
 	try{
-		std::cout << av[1] << std::endl;
 		RPN A(av[1]);
 		A.calculate_RPN();
 	}
