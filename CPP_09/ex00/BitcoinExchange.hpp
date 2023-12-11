@@ -6,13 +6,14 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:17:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 10:49:50 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:32:58 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <map>
 
@@ -21,7 +22,8 @@ class BitcoinExchange{
 		std::map<int, float> _database;
 
 	public:
-		int	check_input(std::string& buff);
+		int		check_input(std::string& buff);
+		bool	check_input_header(std::string& buff);
 
 	BitcoinExchange(void);
 	BitcoinExchange(BitcoinExchange const& other);

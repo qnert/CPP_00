@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:16:27 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 10:46:32 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:33:02 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ int	main(int argc, char** argv){
 		input_content = get_infile_content(argv[1]);
 		if (input_content.size() == 0)
 			return (-1);
-		BE1.check_input(input_content);
+		if (BE1.check_input_header(input_content))
+			BE1.check_input(input_content);
+		else
+			std::cout << "Error: File header is invalid!" << std::endl;
 	}
 	return (0);
 }

@@ -6,21 +6,23 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 10:49:28 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:36:29 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
+//helper functions
 bool	is_erasable(char c){
 	return (c == '-');
 }
 std::string	convert_back_to_date(int date){
 	std::string	str_date = std::to_string(date);
-	if (str_date.size() < 8)
-		return (str_date);
-	str_date.insert(4, "-");
-	str_date.insert(7, "-");
+	int	len = str_date.size();
+	if (len < 6)
+		return ("");
+	str_date.insert(len - 4 , "-");
+	str_date.insert(len - 1, "-");
 	return (str_date);
 }
 
@@ -43,6 +45,7 @@ float	get_value(std::string& buff){
 	return (std::strtof(buff.substr(check, i).c_str(), nullptr));
 }
 
+// Canonical Form
 BitcoinExchange::BitcoinExchange(void){
 	std::string		buff;
 	std::ifstream	_database;
@@ -73,6 +76,7 @@ float&		BitcoinExchange::operator[](int key){
 
 BitcoinExchange::~BitcoinExchange(void){};
 
+// member functions BitcoinExchange class
 int	BitcoinExchange::check_input(std::string& buff){
 	int	i = 13;
 	float	tmp;
@@ -81,14 +85,15 @@ int	BitcoinExchange::check_input(std::string& buff){
 	while (buff[i]){
 		date = get_key_date(buff, i, '|');
 		while (buff[i] != '|' && buff[i]){
-			if(buff[i] == '\n'){
+			if(buff[i] == '\n' || date >= 20220329 || date <= 20090102){
 				std::cout << "Error: bad input => " << convert_back_to_date(date) << std::endl;
 				break ;
 			}
 			i++;
 		}
 		tmp = i + 1;
-		if (buff[i] == '\n'){
+		if (buff[i] == '\n' || date > 20220329 || date < 20090102){
+			while (buff[i] != '\n' && buff[i] != '\0'){i++;}
 			i++;
 			continue ;
 		}
@@ -116,4 +121,18 @@ int	BitcoinExchange::check_input(std::string& buff){
 		i++;
 	}
 	return (0);
+}
+
+bool	BitcoinExchange::check_input_header(std::string& buff){
+	int					i = 0;
+	std::string			line;
+	std::istringstream	iss(buff);
+
+	while (std::getline(iss, line, '\n')){
+		if (i == 0 && line.compare("date | value"))
+			return (false);
+		else
+			return (true);
+	}
+	return (true);
 }
