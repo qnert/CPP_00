@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:59:16 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 14:04:28 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 15:26:05 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class RPN{
 	private:
 		std::string		_input;
-		std::stack<int>	_nbs;
 
 	public:
+		void	calculate_RPN(void);
 
 	RPN(void);
 	RPN(std::string input);

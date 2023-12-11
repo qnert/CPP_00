@@ -1,8 +1,8 @@
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = btc
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+NAME = RPN
 
-SRCS = main.cpp BitcoinExchange.cpp
+SRCS = main.cpp RPN.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
