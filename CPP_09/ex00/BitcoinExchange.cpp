@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/09 13:51:43 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 10:49:28 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ float	get_value(std::string& buff){
 
 BitcoinExchange::BitcoinExchange(void){
 	std::string		buff;
-	std::ifstream	database;
+	std::ifstream	_database;
 
-	database.open("./data.csv");
-	if (!database.is_open())
-		throw (std::runtime_error("Database file was not found!\n"));
-	while (std::getline(database, buff)){
-		this->database[get_key_date(buff, 0, ',')] = get_value(buff);
+	_database.open("./data.csv");
+	if (!_database.is_open())
+		throw (std::runtime_error("_Database file was not found!\n"));
+	while (std::getline(_database, buff)){
+		this->_database[get_key_date(buff, 0, ',')] = get_value(buff);
 	}
-	database.close();
+	_database.close();
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const& other){
@@ -62,13 +62,58 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const& other){
 
 BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const& other){
 	if (this != &other){
-		this->database = other.database;
+		this->_database = other._database;
 	}
 	return (*this);
 }
 
 float&		BitcoinExchange::operator[](int key){
-	return (this->database[key]);
+	return (this->_database[key]);
 }
 
 BitcoinExchange::~BitcoinExchange(void){};
+
+int	BitcoinExchange::check_input(std::string& buff){
+	int	i = 13;
+	float	tmp;
+	int	date;
+	int	check;
+	while (buff[i]){
+		date = get_key_date(buff, i, '|');
+		while (buff[i] != '|' && buff[i]){
+			if(buff[i] == '\n'){
+				std::cout << "Error: bad input => " << convert_back_to_date(date) << std::endl;
+				break ;
+			}
+			i++;
+		}
+		tmp = i + 1;
+		if (buff[i] == '\n'){
+			i++;
+			continue ;
+		}
+		while (buff[i] != '\n' && buff[i]){i++;};
+		try{
+			tmp = std::atof(buff.substr(tmp, i).c_str());
+			if (tmp < 0){
+				std::cout << "Error: not a positive number" << std::endl;
+				i++;
+				continue;
+			}
+			else if (tmp > 1000){
+				std::cout << "Error: too large a number" << std::endl;
+				i++;
+				continue;
+			}
+		}
+		catch(std::exception& e){
+			std::cout << "std::atoi fail " << tmp << std::endl;
+			return (-1);
+		}
+		check = date;
+		while (this->_database.find(date) == this->_database.end()){--date;}
+		std::cout << convert_back_to_date(check) << " => " << tmp << " = "  << this->_database[date] * tmp << std::endl;
+		i++;
+	}
+	return (0);
+}

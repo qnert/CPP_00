@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:17:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/09 13:48:34 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 10:49:50 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 #include <map>
 
 class BitcoinExchange{
-	public:
-		std::map<int, float> database;
+	private:
+		std::map<int, float> _database;
 
 	public:
+		int	check_input(std::string& buff);
 
 	BitcoinExchange(void);
 	BitcoinExchange(BitcoinExchange const& other);

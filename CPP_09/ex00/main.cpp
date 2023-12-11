@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:16:27 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/09 14:01:59 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/11 10:46:32 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,50 +29,6 @@ std::string	get_infile_content(std::string str){
 	return (ret_str);
 }
 
-int	check_input_with_database(BitcoinExchange& BE1, std::string& buff){
-	int	i = 0;
-	float	tmp;
-	int	date;
-	int	check;
-	while (buff[i]){
-		date = get_key_date(buff, i, '|');
-		while (buff[i] != '|' && buff[i]){
-			if(buff[i] == '\n'){
-				std::cout << "Error: bad input => " << convert_back_to_date(date) << std::endl;
-				break ;
-			}
-			i++;
-		}
-		tmp = i + 1;
-		if (buff[i] == '\n'){
-			i++;
-			continue ;
-		}
-		while (buff[i] != '\n' && buff[i]){i++;};
-		try{
-			tmp = std::atof(buff.substr(tmp, i).c_str());
-			if (tmp < 0){
-				std::cout << "Error: not a positive number" << std::endl;
-				i++;
-				continue;
-			}
-			else if (tmp > 1000){
-				std::cout << "Error: too large a number" << std::endl;
-				i++;
-				continue;
-			}
-		}
-		catch(std::exception& e){
-			std::cout << "std::atoi fail " << tmp << std::endl;
-			return (-1);
-		}
-		check = date;
-		while (BE1.database.find(date) == BE1.database.end()){--date;}
-		std::cout << convert_back_to_date(check) << " => " << tmp << " = "  << BE1[date] * tmp << std::endl;
-		i++;
-	}
-	return (0);
-}
 
 int	main(int argc, char** argv){
 	if (argc == 2){
@@ -82,7 +38,7 @@ int	main(int argc, char** argv){
 		input_content = get_infile_content(argv[1]);
 		if (input_content.size() == 0)
 			return (-1);
-		check_input_with_database(BE1, input_content);
+		BE1.check_input(input_content);
 	}
 	return (0);
 }
