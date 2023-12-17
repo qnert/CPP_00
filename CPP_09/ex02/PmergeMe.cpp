@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:54 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/16 18:40:19 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/17 16:35:33 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,28 +69,31 @@ PmergeMe::PmergeMe(int argc, char** argv){
 }
 
 //member functions
-void	PmergeMe::jacobsthal_numbers(int n){
+std::vector<int>	PmergeMe::jacobsthal_numbers(int n){
 	int	tmp;
+	std::vector<int>	vec;
 
 	for (int i = 0; i < n; i++){
 		tmp = ((1 << i) - (i % 2 == 0 ? 1 : -1)) / 3;
-		std::cout << tmp << " ";
+		vec.push_back(tmp);
 	}
-	std::cout << std::endl;
+	return (vec);
 }
 
 void	PmergeMe::algorithm_vector(std::vector<int>& vec){
+	std::vector<int>	main, pend;
 	std::vector<int>::iterator it, it2;
+	if (vec.size() == 1)
+		return ;
 	if (vec.size() == 2){
 		it = vec.begin();
 		if (*it > *(++it))
 			std::swap(*(--it), *(++it));
 		return ;
 	}
-	for (it = vec.begin(); it + 1 != vec.end() && it + 2 != vec.end(); it++){
+	for (it = vec.begin(); it != vec.end() && it + 1 != vec.end(); it+=2){
 		if (*it < *(it + 1))
 			std::swap(*it, *(it + 1));
-		it += 1;
 	}
 	while (pairs_unsorted(vec)){
 		it2 = vec.begin();
@@ -102,4 +105,33 @@ void	PmergeMe::algorithm_vector(std::vector<int>& vec){
 			it2 += 2;
 		}
 	}
+	unsigned int	i = 1;
+	for (it = vec.begin(); it != vec.end(); it++){
+		if (i % 2)
+			main.push_back(*it);
+		else
+			pend.push_back(*it);
+		i++;
+	}
+	if (pend[0] < main[0])
+		main.insert(main.begin(), pend[0]);
+	int	tmp;
+	unsigned int	min = 1;
+	vec = jacobsthal_numbers(15);
+	print_container(vec);
+	for (it = vec.begin() + 3; it != vec.end(); it++){
+		i = *it;
+		tmp = i;
+		while (i > 0 && min < i){
+			if (i <= pend.size())
+				main.insert(std::lower_bound(main.begin(), main.end(), pend[i - 1]), pend[i - 1]);
+			i--;
+		}
+		min = tmp;
+	}
+	if (!std::is_sorted(main.begin(), main.end())){
+		main.insert(std::lower_bound(main.begin(), main.end(), main[main.size() - 1]), main[main.size() - 1]);
+		main.pop_back();
+	}
+	vec = main;
 }

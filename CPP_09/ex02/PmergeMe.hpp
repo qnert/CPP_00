@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/16 18:11:36 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/17 13:49:12 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 class PmergeMe{
 	public:
-		void	jacobsthal_numbers(int n);
-		void	algorithm_vector(std::vector<int>& lst);
+		std::vector<int>	jacobsthal_numbers(int n);
+		void				algorithm_vector(std::vector<int>& lst);
 
 	PmergeMe(int argc, char** argv);
 	// PmergeMe(PmergeMe const& other);
