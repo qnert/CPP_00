@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:54 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 17:29:54 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/18 22:09:23 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,25 @@
 //Canonical Form
 PmergeMe::PmergeMe(int argc, char** argv){
 	int					tmp;
+	std::string			buff;
 	std::vector<int>	vec;
 	std::deque<int>		deq;
 
 	for (int i = 1; i < argc; i++){
-		tmp = std::atoi(argv[i]);
-		if (tmp < 0){
-			std::cout << "The entered values were invalid." << std::endl;
-			std::exit(1);
+		std::istringstream iss(argv[i]);
+		while (std::getline(iss, buff, ' ')){
+			tmp = std::atoi(buff.c_str());
+			if (tmp < 0){
+				std::cout << "The entered values were invalid." << std::endl;
+				std::exit(1);
+			}
+			if (find_dup(vec, tmp) == true || find_dup(deq, tmp) == true){
+				std::cout << "Duplicate value was found." << std::endl;
+				std::exit(1);
+			}
+			vec.push_back(tmp);
+			deq.push_back(tmp);
 		}
-		if (find_dup(vec, tmp) == true || find_dup(deq, tmp) == true){
-			std::cout << "Duplicate value was found." << std::endl;
-			std::exit(1);
-		}
-		vec.push_back(tmp);
-		deq.push_back(tmp);
 	}
 	std::cout << "Before: ";
 	print_container(vec);
