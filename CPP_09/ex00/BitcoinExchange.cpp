@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 13:53:53 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/18 16:20:12 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,34 +34,34 @@ int	get_key_date_database(std::string buff){
 	year = std::strtol(buff.c_str(), &end_ptr, 10);
 	if (!end_ptr) throw(std::runtime_error("Invalid date found!\n"));
 	if (*end_ptr != '-') throw(std::runtime_error("Invalid date found!\n"));
+	if (year > 2022 || year < 2009) throw(std::runtime_error("Invalid year found!\n"));
 
 	buff = end_ptr + 1;
 	month = std::strtol(buff.c_str(), &end_ptr, 10);
 	if (!end_ptr) throw(std::runtime_error("Invalid date found!\n"));
 	if (*end_ptr != '-') throw(std::runtime_error("Invalid date found!\n"));
+	if (month > 12) throw(std::runtime_error("Invalid month found!\n"));
 
 	buff = end_ptr + 1;
 	day = std::strtol(buff.c_str(), &end_ptr, 10);
+	if (day > 31 || day < 1) throw(std::runtime_error("Invalid day found!\n"));
+	if (end_ptr[0] == '\0') throw(std::runtime_error("Error: no value found!\n"));
 	return (year * 10000 + month * 100 + day);
 }
 
-int	get_key_date(std::string& buff, int i, char c){
-	int	j = i;
-	int	date = 0;
-	std::string	tmp;
-	while (buff[i] != c && buff[i]){i++;}
-	tmp =  buff.substr(j, i);
-	tmp.erase(std::remove_if(tmp.begin(), tmp.end(), is_erasable), tmp.end());
-	date = std::atoi(tmp.c_str());
-	return (date);
-}
-
-float	get_value(std::string& buff){
+float	get_value(std::string& buff, char c){
 	int	i = 0;
-	while (buff[i] != ','){i++;}
+	while (buff[i] && buff[i] != c){i++;}
+	if (buff[i] == '\0' || buff[i + 1] == '\0')
+		throw(std::runtime_error("Error: no value found!\n"));
 	int	check = i + 1;
 	while (buff[i] != '\n' && buff[i]){i++;}
-	return (std::strtof(buff.substr(check, i).c_str(), nullptr));
+	float	value = std::strtof(buff.substr(check, i).c_str(), nullptr);
+	if (c == '|' && value > 1000)
+		throw (std::runtime_error("Error: too large a number.\n"));
+	else if (value < 0)
+		throw (std::runtime_error("Error: not a positive number.\n"));
+	return (value);
 }
 
 // Canonical Form
@@ -76,7 +76,7 @@ BitcoinExchange::BitcoinExchange(void){
 	if (buff != "date,exchange_rate")
 		std::runtime_error("_Database header invalid!\n");
 	while (std::getline(_database, buff)){
-		this->_database[get_key_date_database(buff)] = get_value(buff);
+		this->_database[get_key_date_database(buff)] = get_value(buff, ',');
 	}
 	_database.close();
 }
@@ -100,68 +100,25 @@ BitcoinExchange::~BitcoinExchange(void){};
 
 // member functions BitcoinExchange class
 int	BitcoinExchange::check_input(std::string& buff){
-	int	i = 13;
-	float	tmp;
-	int	date;
-	int	check;
-	while (buff[i]){
+	std::string			tmp;
+	std::istringstream	iss(buff);
+
+	std::getline(iss, tmp, '\n');
+	if (tmp != "date | value"){
+		std::cout << "Invalid header!" << std::endl;
+		return (-1);
+	}
+	while (std::getline(iss, tmp, '\n')){
 		try{
-			get_key_date_database(buff.substr(i, buff.size() - i));
+			int		date = get_key_date_database(tmp);
+			int		check = date;
+			float	value = get_value(tmp, '|');
+			while (this->_database.find(date) == this->_database.end()){--date;}
+				std::cout << convert_back_to_date(check) << " => " << value << " = "  << this->_database[date] * value << std::endl;
 		}
 		catch(std::exception& e){
 			std::cout << e.what();
-			return (-1);
 		}
-		date = get_key_date(buff, i, '|');
-		while (buff[i] != '|' && buff[i]){
-			if(buff[i] == '\n' || date >= 20220329 || date <= 20090102){
-				std::cout << "Error: bad input => " << convert_back_to_date(date) << std::endl;
-				break ;
-			}
-			i++;
-		}
-		tmp = i + 1;
-		if (buff[i] == '\n' || date > 20220329 || date < 20090102){
-			while (buff[i] != '\n' && buff[i] != '\0'){i++;}
-			i++;
-			continue ;
-		}
-		while (buff[i] != '\n' && buff[i]){i++;};
-		try{
-			tmp = std::atof(buff.substr(tmp, i).c_str());
-			if (tmp < 0){
-				std::cout << "Error: not a positive number" << std::endl;
-				i++;
-				continue;
-			}
-			else if (tmp > 1000){
-				std::cout << "Error: too large a number" << std::endl;
-				i++;
-				continue;
-			}
-		}
-		catch(std::exception& e){
-			std::cout << "std::atoi fail " << tmp << std::endl;
-			return (-1);
-		}
-		check = date;
-		while (this->_database.find(date) == this->_database.end()){--date;}
-		std::cout << convert_back_to_date(check) << " => " << tmp << " = "  << this->_database[date] * tmp << std::endl;
-		i++;
 	}
 	return (0);
-}
-
-bool	BitcoinExchange::check_input_header(std::string& buff){
-	int					i = 0;
-	std::string			line;
-	std::istringstream	iss(buff);
-
-	while (std::getline(iss, line, '\n')){
-		if (i == 0 && line.compare("date | value"))
-			return (false);
-		else
-			return (true);
-	}
-	return (true);
 }

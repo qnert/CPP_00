@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:16:27 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 13:24:47 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/18 15:49:16 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,18 @@ std::string	get_infile_content(std::string str){
 
 int	main(int argc, char** argv){
 	if (argc == 2){
-		BitcoinExchange BE1;
-		std::string		input_content;
+		try{
+			BitcoinExchange BE1;
+			std::string		input_content;
 
-		input_content = get_infile_content(argv[1]);
-		if (input_content.size() == 0)
-			return (-1);
-		if (BE1.check_input_header(input_content))
+			input_content = get_infile_content(argv[1]);
+			if (input_content.size() == 0)
+				return (-1);
 			BE1.check_input(input_content);
-		else
-			std::cout << "Error: File header is invalid!" << std::endl;
+		}
+		catch (std::exception& e){
+			std::cout << e.what();
+		}
 	}
 	return (0);
 }
