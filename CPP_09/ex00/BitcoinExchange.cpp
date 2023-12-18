@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 13:36:29 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/18 13:53:53 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,25 @@ std::string	convert_back_to_date(int date){
 	str_date.insert(len - 4 , "-");
 	str_date.insert(len - 1, "-");
 	return (str_date);
+}
+
+int	get_key_date_database(std::string buff){
+	char*	end_ptr;
+	long	year;
+	long	month;
+	long	day;
+	year = std::strtol(buff.c_str(), &end_ptr, 10);
+	if (!end_ptr) throw(std::runtime_error("Invalid date found!\n"));
+	if (*end_ptr != '-') throw(std::runtime_error("Invalid date found!\n"));
+
+	buff = end_ptr + 1;
+	month = std::strtol(buff.c_str(), &end_ptr, 10);
+	if (!end_ptr) throw(std::runtime_error("Invalid date found!\n"));
+	if (*end_ptr != '-') throw(std::runtime_error("Invalid date found!\n"));
+
+	buff = end_ptr + 1;
+	day = std::strtol(buff.c_str(), &end_ptr, 10);
+	return (year * 10000 + month * 100 + day);
 }
 
 int	get_key_date(std::string& buff, int i, char c){
@@ -53,8 +72,11 @@ BitcoinExchange::BitcoinExchange(void){
 	_database.open("./data.csv");
 	if (!_database.is_open())
 		throw (std::runtime_error("_Database file was not found!\n"));
+	std::getline(_database, buff);
+	if (buff != "date,exchange_rate")
+		std::runtime_error("_Database header invalid!\n");
 	while (std::getline(_database, buff)){
-		this->_database[get_key_date(buff, 0, ',')] = get_value(buff);
+		this->_database[get_key_date_database(buff)] = get_value(buff);
 	}
 	_database.close();
 }
@@ -83,6 +105,13 @@ int	BitcoinExchange::check_input(std::string& buff){
 	int	date;
 	int	check;
 	while (buff[i]){
+		try{
+			get_key_date_database(buff.substr(i, buff.size() - i));
+		}
+		catch(std::exception& e){
+			std::cout << e.what();
+			return (-1);
+		}
 		date = get_key_date(buff, i, '|');
 		while (buff[i] != '|' && buff[i]){
 			if(buff[i] == '\n' || date >= 20220329 || date <= 20090102){
