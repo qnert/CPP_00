@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:54 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 15:24:18 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/18 17:28:23 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,59 @@ void	print_container(C& container){
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
+}
+
+template<typename C>
+void	pair_up_and_sort(C& container){
+	typename C::iterator it, it2;
+	for (it = container.begin(); it != container.end() && it + 1 != container.end(); it+=2){
+		if (*it < *(it + 1))
+			std::swap(*it, *(it + 1));
+	}
+	while (pairs_unsorted(container)){
+		it2 = container.begin();
+		while (it2 + 2 != container.end() && it2 + 3 != container.end()){
+			if (*it2 > *(it2 + 2)){
+				std::swap(*it2, *(it2 + 2));
+				std::swap(*(it2 + 1), *(it2 + 3));
+			}
+			it2 += 2;
+		}
+	}
+}
+
+template<typename C>
+void	create_main_and_pend_chain(C& main_container, C& container1, C& container2, int i){
+	for (typename C::iterator it = main_container.begin(); it != main_container.end(); it++){
+		if (i % 2)
+			container1.push_back(*it);
+		else
+			container2.push_back(*it);
+		i++;
+	}
+	if (container2[0] < container1[0])
+		container1.insert(container1.begin(), container2[0]);
+}
+
+template<typename C>
+void	insert_pend_into_main(C& container1, C& container2, unsigned int i){
+	int	tmp;
+	unsigned int	min = 1;
+	std::vector<int> vec = PmergeMe::jacobsthal_numbers(15);
+	for (std::vector<int>::iterator it = vec.begin() + 3; it != vec.end(); it++){
+		i = *it;
+		tmp = i;
+		while (i > 0 && min < i){
+			if (i <= container2.size())
+				container1.insert(std::lower_bound(container1.begin(), container1.end(), container2[i - 1]), container2[i - 1]);
+			i--;
+		}
+		min = tmp;
+	}
+	if (!std::is_sorted(container1.begin(), container1.end())){
+		container1.insert(std::lower_bound(container1.begin(), container1.end(), container1[container1.size() - 1]), container1[container1.size() - 1]);
+		container1.pop_back();
+	}
 }
 
 //Canonical Form
@@ -101,8 +154,9 @@ std::vector<int>	PmergeMe::jacobsthal_numbers(int n){
 }
 
 void	PmergeMe::algorithm_vector(std::vector<int>& vec){
+	unsigned int	i = 1;
 	std::vector<int>	main, pend;
-	std::vector<int>::iterator it, it2;
+	std::vector<int>::iterator it;
 	if (vec.size() == 1)
 		return ;
 	if (vec.size() == 2){
@@ -111,53 +165,16 @@ void	PmergeMe::algorithm_vector(std::vector<int>& vec){
 			std::swap(*(--it), *(++it));
 		return ;
 	}
-	for (it = vec.begin(); it != vec.end() && it + 1 != vec.end(); it+=2){
-		if (*it < *(it + 1))
-			std::swap(*it, *(it + 1));
-	}
-	while (pairs_unsorted(vec)){
-		it2 = vec.begin();
-		while (it2 + 2 != vec.end() && it2 + 3 != vec.end()){
-			if (*it2 > *(it2 + 2)){
-				std::swap(*it2, *(it2 + 2));
-				std::swap(*(it2 + 1), *(it2 + 3));
-			}
-			it2 += 2;
-		}
-	}
-	unsigned int	i = 1;
-	for (it = vec.begin(); it != vec.end(); it++){
-		if (i % 2)
-			main.push_back(*it);
-		else
-			pend.push_back(*it);
-		i++;
-	}
-	if (pend[0] < main[0])
-		main.insert(main.begin(), pend[0]);
-	int	tmp;
-	unsigned int	min = 1;
-	vec = jacobsthal_numbers(15);
-	for (it = vec.begin() + 3; it != vec.end(); it++){
-		i = *it;
-		tmp = i;
-		while (i > 0 && min < i){
-			if (i <= pend.size())
-				main.insert(std::lower_bound(main.begin(), main.end(), pend[i - 1]), pend[i - 1]);
-			i--;
-		}
-		min = tmp;
-	}
-	if (!std::is_sorted(main.begin(), main.end())){
-		main.insert(std::lower_bound(main.begin(), main.end(), main[main.size() - 1]), main[main.size() - 1]);
-		main.pop_back();
-	}
+	pair_up_and_sort(vec);
+	create_main_and_pend_chain(vec, main, pend, i);
+	insert_pend_into_main(main, pend, i);
 	vec = main;
 }
 
 void	PmergeMe::algorithm_deque(std::deque<int>& deq){
+	unsigned int	i = 1;
 	std::deque<int>	main, pend;
-	std::deque<int>::iterator it, it2;
+	std::deque<int>::iterator it;
 	if (deq.size() == 1)
 		return ;
 	if (deq.size() == 2){
@@ -166,46 +183,8 @@ void	PmergeMe::algorithm_deque(std::deque<int>& deq){
 			std::swap(*(--it), *(++it));
 		return ;
 	}
-	for (it = deq.begin(); it != deq.end() && it + 1 != deq.end(); it+=2){
-		if (*it < *(it + 1))
-			std::swap(*it, *(it + 1));
-	}
-	while (pairs_unsorted(deq)){
-		it2 = deq.begin();
-		while (it2 + 2 != deq.end() && it2 + 3 != deq.end()){
-			if (*it2 > *(it2 + 2)){
-				std::swap(*it2, *(it2 + 2));
-				std::swap(*(it2 + 1), *(it2 + 3));
-			}
-			it2 += 2;
-		}
-	}
-	unsigned int	i = 1;
-	for (it = deq.begin(); it != deq.end(); it++){
-		if (i % 2)
-			main.push_back(*it);
-		else
-			pend.push_back(*it);
-		i++;
-	}
-	if (pend[0] < main[0])
-		main.insert(main.begin(), pend[0]);
-	int	tmp;
-	unsigned int	min = 1;
-	std::vector<int> vec = jacobsthal_numbers(15);
-	for (it = deq.begin() + 3; it != deq.end(); it++){
-		i = *it;
-		tmp = i;
-		while (i > 0 && min < i){
-			if (i <= pend.size())
-				main.insert(std::lower_bound(main.begin(), main.end(), pend[i - 1]), pend[i - 1]);
-			i--;
-		}
-		min = tmp;
-	}
-	if (!std::is_sorted(main.begin(), main.end())){
-		main.insert(std::lower_bound(main.begin(), main.end(), main[main.size() - 1]), main[main.size() - 1]);
-		main.pop_back();
-	}
+	pair_up_and_sort(deq);
+	create_main_and_pend_chain(deq, main, pend, i);
+	insert_pend_into_main(main, pend, i);
 	deq = main;
 }
