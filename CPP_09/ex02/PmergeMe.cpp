@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:54 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/17 18:43:25 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/18 13:55:57 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ PmergeMe::PmergeMe(int argc, char** argv){
 	clock_t end = clock();
 	std::cout << "After: ";
 	print_container(vec);
-    double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+	double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector : " << duration << " us" <<std::endl;
 	start = clock();
 	this->algorithm_deque(deq);
