@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:54 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 14:13:50 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/18 15:24:18 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,17 @@ PmergeMe::PmergeMe(int argc, char** argv){
 	duration = static_cast<double>(end - start) * 1000.0 / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << vec.size() << " elements with std::deque : " << duration << " ms" <<std::endl;
 }
+
+PmergeMe::PmergeMe(PmergeMe const& other){
+	*this = other;
+}
+
+PmergeMe&	PmergeMe::operator=(PmergeMe const& other){
+	(void) other;
+	return (*this);
+}
+
+PmergeMe::~PmergeMe(void){}
 
 //member functions
 std::vector<int>	PmergeMe::jacobsthal_numbers(int n){
