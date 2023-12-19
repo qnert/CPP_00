@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:01 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 22:14:26 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/19 09:00:23 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ int	main(int ac, char** av){
 		std::cout << "No values to perform the algoithm were found!" << std::endl;
 		return (1);
 	}
-	PmergeMe Sorting(ac, av);
+	try{
+		PmergeMe Sorting(ac, av);
+	}
+	catch(std::exception& e){
+		std::cout << e.what();
+	}
 	return (0);
 }

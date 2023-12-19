@@ -6,12 +6,21 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:54 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 22:09:23 by skunert          ###   ########.fr       */
+/*   Updated: 2023/12/19 09:03:13 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 #include "PmergeMe.tpp"
+
+bool	check_input(std::string str){
+	for (unsigned int i = 0; i < str.size(); i++){
+		if ((str[i] <'0' || str[i] > '9') && str[i] != 32){
+			return (false);
+		}
+	}
+	return (true);
+}
 
 //Canonical Form
 PmergeMe::PmergeMe(int argc, char** argv){
@@ -23,6 +32,8 @@ PmergeMe::PmergeMe(int argc, char** argv){
 	for (int i = 1; i < argc; i++){
 		std::istringstream iss(argv[i]);
 		while (std::getline(iss, buff, ' ')){
+			if (check_input(argv[i]) == false || std::strlen(argv[i]) == 0)
+				throw(std::runtime_error("False input detected!\n"));
 			tmp = std::atoi(buff.c_str());
 			if (tmp < 0){
 				std::cout << "The entered values were invalid." << std::endl;
