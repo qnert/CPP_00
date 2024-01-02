@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:59:31 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 16:20:41 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/02 13:12:15 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ bool	check_input(std::string& str){
 			return (false);
 		}
 	}
+	// if (check_arithmetic_symbols(str) == false)
+	// 	return (false);
 	return (true);
 }
 
@@ -112,6 +114,8 @@ void	RPN::calculate_RPN(void){
 			calc.push(std::atof(&this->_input[i]));
 		else if (is_arithmetic_symbol(this->_input[i])){
 			tmp = this->_input[i];
+			if (calc.size() < 2)
+				throw std::runtime_error("Not enough numbers on the stack.\n");
 			switch(tmp){
 				case '+':
 					do_addition(calc);
