@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:49:59 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/09 14:40:54 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 20:29:53 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 template <typename T>
 Array<T>::Array(void){
-	this->_arr = nullptr;
 	this->_size = 0;
 }
 

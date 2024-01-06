@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:17:02 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/11 13:32:58 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 20:36:52 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <cstring>
+#include <iomanip>
+#include <cstdlib>
 #include <map>
 
 class BitcoinExchange{

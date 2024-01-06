@@ -6,11 +6,21 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:29:44 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 17:29:47 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 20:51:32 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //helper functions
+template<typename Iterator>
+bool	is_main_sorted(Iterator begin, Iterator end){
+	while (begin != end){
+		if (*begin > *(begin + 1))
+			return (false);
+		begin++;
+	}
+	return (true);
+}
+
 template<typename C>
 bool	pairs_unsorted(C& container){
 	typename C::iterator	it2 = container.begin();
@@ -87,7 +97,7 @@ void	insert_pend_into_main(C& container1, C& container2, unsigned int i){
 		}
 		min = tmp;
 	}
-	if (!std::is_sorted(container1.begin(), container1.end())){
+	if (!is_main_sorted(container1.begin(), container1.end())){
 		container1.insert(std::lower_bound(container1.begin(), container1.end(), container1[container1.size() - 1]), container1[container1.size() - 1]);
 		container1.pop_back();
 	}

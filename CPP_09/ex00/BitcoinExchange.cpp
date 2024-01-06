@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:44:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 16:20:12 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 20:40:08 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ bool	is_erasable(char c){
 	return (c == '-');
 }
 std::string	convert_back_to_date(int date){
-	std::string	str_date = std::to_string(date);
+	std::string str_date;
+	std::stringstream ss;
+	ss << date;
+	str_date = ss.str();
 	int	len = str_date.size();
 	if (len < 6)
 		return ("");
@@ -56,7 +59,7 @@ float	get_value(std::string& buff, char c){
 		throw(std::runtime_error("Error: no value found!\n"));
 	int	check = i + 1;
 	while (buff[i] != '\n' && buff[i]){i++;}
-	float	value = std::strtof(buff.substr(check, i).c_str(), nullptr);
+	float	value = std::strtof(buff.substr(check, i).c_str(), 0);
 	if (c == '|' && value > 1000)
 		throw (std::runtime_error("Error: too large a number.\n"));
 	else if (value < 0)

@@ -1,6 +1,7 @@
 #include "Array.hpp"
 #include "Array.tpp"
 
+//Linux errors are ok because it is the 42 main given in the subject
 #define MAX_VAL 750
 int main(int, char**)
 {

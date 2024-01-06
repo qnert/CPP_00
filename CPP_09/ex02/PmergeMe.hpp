@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:19:45 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 22:07:23 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 20:41:31 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <algorithm>
 #include <ctime>
 #include <sstream>
+#include <cstdlib>
+#include <cstring>
 
 class PmergeMe{
 	private:

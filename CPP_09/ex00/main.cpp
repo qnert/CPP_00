@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:16:27 by skunert           #+#    #+#             */
-/*   Updated: 2023/12/18 15:49:16 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 20:33:28 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ std::string	get_infile_content(std::string str){
 	std::string		ret_str;
 	std::ifstream	infile;
 
-	infile.open(str);
+	infile.open(str.c_str());
 	if (!infile.is_open()){
 		std::cout << "Unvalid file as input." << std::endl;
 		return ("");
