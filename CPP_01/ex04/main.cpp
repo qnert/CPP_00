@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:20:00 by skunert           #+#    #+#             */
-/*   Updated: 2023/10/02 16:58:45 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:34:15 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string	read_file(std::string str)
 	std::string		ret_str = "";
 	std::fstream	fd;
 
-	fd.open(str, std::ios::in);
+	fd.open(str.c_str(), std::ios::in);
 	if (!fd)
 		return ("");
 	while (std::getline(fd, buff))
@@ -48,7 +48,7 @@ int	replace_string(std::string filename, std::string file_content, char **argv)
 	size_t	found;
 	std::ofstream	fd_new;
 
-	fd_new.open(filename.append(".replace"), std::ios::out);
+	fd_new.open(filename.append(".replace").c_str(), std::ios::out);
 	if (!fd_new)
 		return (std::cout << "File can't be created!\n", 1);
 	found = file_content.find(argv[2]);

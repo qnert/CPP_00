@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:36:17 by skunert           #+#    #+#             */
-/*   Updated: 2023/09/05 23:14:31 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:32:11 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 #define RESET "\033[0m"
 #define RED "\033[31m"

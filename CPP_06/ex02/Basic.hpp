@@ -6,14 +6,13 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:33:14 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/28 15:05:48 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:56:10 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <random>
 
 class Base{
 	public:

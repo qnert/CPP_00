@@ -6,10 +6,15 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:17:08 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 17:34:03 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:52:57 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <climits>
+#include <cmath>
+#include <cstring>
+#include <cstdlib>
+#include <iomanip>
 #include <iostream>
 
 bool	is_char(const std::string str){

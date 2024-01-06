@@ -6,13 +6,14 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:21:22 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/30 18:58:40 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:52:51 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <climits>
 #include <cmath>
 #include <cstdlib>
+#include <cstring>
 #include <iomanip>
 #include <iostream>
 

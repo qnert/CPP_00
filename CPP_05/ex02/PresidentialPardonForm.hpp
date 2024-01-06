@@ -6,14 +6,12 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:07:10 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/24 17:07:30 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:44:48 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <random>
-#include <chrono>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 

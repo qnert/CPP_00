@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:49:19 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/24 18:11:40 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:50:25 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("Shrubbe
 	std::cout << "ShrubberyCreationForm param constructor called.\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& other)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& other): AForm(other)
 {
 	*this = other;
 }
@@ -49,7 +49,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const& executor)
 		throw GradeTooLowException();
 	else
 	{
-		std::ofstream	outfile(this->_target + "_shrubbery", std::ios::out);
+		std::ofstream	outfile((this->_target + "_shrubbery").c_str(), std::ios::out);
 		if (outfile.is_open() == false){
 			std::cout << "File could not be created nor opened.\n";
 			std::cout << executor.getName() << " executed by " << this->getName() << " without success.\n";

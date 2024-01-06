@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include <random>
+#include <cstdlib>
 #include <ctime>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"

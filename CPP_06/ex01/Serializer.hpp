@@ -6,12 +6,13 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:13:36 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/27 18:53:41 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:55:39 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <stdint.h>
 #include "Data.hpp"
 
 class Serializer{

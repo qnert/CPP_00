@@ -24,7 +24,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("RobotomyReq
 	std::cout << "RobotomyRequestForm param constructor called.\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& other)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& other): AForm(other)
 {
 	*this = other;
 }

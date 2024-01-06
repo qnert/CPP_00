@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:07:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/11/24 18:12:16 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:50:13 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("Presi
 	std::cout << "PresidentialPardonForm param constructor called.\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& other)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& other): AForm(other)
 {
 	*this = other;
 }
