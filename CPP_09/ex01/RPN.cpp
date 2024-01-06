@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:59:31 by skunert           #+#    #+#             */
-/*   Updated: 2024/01/02 13:12:15 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:19:55 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,8 @@ void	RPN::calculate_RPN(void){
 			}
 		}
 	}
-	std::cout << "The result is: " << std::setprecision(2) << calc.top() << std::endl;
+	if (calc.size() == 1)
+		std::cout << "The result is: " << std::setprecision(2) << calc.top() << std::endl;
+	else
+		throw std::runtime_error("Error\n");
 }
