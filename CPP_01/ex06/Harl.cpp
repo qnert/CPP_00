@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 14:42:10 by skunert           #+#    #+#             */
-/*   Updated: 2024/01/12 12:46:34 by skunert          ###   ########.fr       */
+/*   Updated: 2024/01/12 13:48:57 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,10 @@ void	Harl::complain(std::string level)
 	{
 		case 0:
 			(this->*funcptrs[0])();
-			break ;
 		case 1:
 			(this->*funcptrs[1])();
-			break ;
 		case 2:
 			(this->*funcptrs[2])();
-			break ;
 		case 3:
 			(this->*funcptrs[3])();
 			break ;
